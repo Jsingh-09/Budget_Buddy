@@ -7,6 +7,7 @@ import android.os.Bundle;
 public class MainActivity extends AppCompatActivity {
 
     /* added a comment to see if I could commit - Chris */
+    //adding comment - Steph
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
