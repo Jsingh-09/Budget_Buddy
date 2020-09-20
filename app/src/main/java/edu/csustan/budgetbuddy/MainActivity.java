@@ -8,6 +8,7 @@ public class MainActivity extends AppCompatActivity {
 
     /* added a comment to see if I could commit - Chris */
     //adding comment - Steph
+    //added a comment - Jorge
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
