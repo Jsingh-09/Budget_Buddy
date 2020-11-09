@@ -2,6 +2,7 @@ package edu.csustan.budgetbuddy;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -20,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private Button calculateRemainingBalance;
     private TextView remainingBalance;
     private TextView totalDisposable;
+    private TextView balance;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
         calculateRemainingBalance = (Button) findViewById(R.id.btnCalculateRemainingBalance);
         remainingBalance = (TextView) findViewById(R.id.tvRemainingBalance);
         totalDisposable = (TextView) findViewById(R.id.tvTotalDisposable);
+        balance = (TextView) findViewById(R.id.tvBalance);
 
         calculateRemainingBalance.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,9 +55,13 @@ public class MainActivity extends AppCompatActivity {
                 }
                 if(numTotalDisposable >= 0) {
                     totalDisposable.setText("Total Disposable: $" + String.valueOf(numTotalDisposable));
+                    balance.setText("Good Job!");
+                    balance.setTextColor(Color.parseColor("#008000"));
                 }
                 else {
                     totalDisposable.setText("Total Disposable: -$" + String.valueOf(Math.abs(numTotalDisposable)));
+                    balance.setText("You're spending too much");
+                    balance.setTextColor(Color.parseColor("#DC143C"));
                 }
             }
         });
