@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">Budget Buddy</string>
+
+    <string name="back4app_server_url">https://parseapi.back4app.com/</string>
+
+    <!-- Change the following strings as required -->
+    <string name="back4app_app_id">mYr260IWiwsxSA2qdiXMA3wQ3Ux8n3AICL7vXDuV</string>
+    <string name="back4app_client_key">hryQYputh23AfEbCPdt9uwKa9K2t36la5SQEGdbf</string>
+
+    <string-array name="fragments">
+        <item>Home</item>
+        <item>Building credit</item>
+        <item>Track my Expenses</item>
+        <item>Saving Goal</item>
+        <item>Budget Calculator</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

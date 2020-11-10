@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-2005448149/Budget_Buddy.iml" filepath="$PROJECT_DIR$/.idea/modules/-2005448149/Budget_Buddy.iml" group="Budget_Buddy" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app.iml" group="Budget Buddy/app" />
+    </modules>
+  </component>
+</project>
