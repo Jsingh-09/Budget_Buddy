@@ -197,6 +197,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:drawableEnd="@drawable/ic_calculate"
+        android:drawablePadding="10dp"
         android:text="Budget Calculator"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
         android:textColor="@android:color/background_light"
