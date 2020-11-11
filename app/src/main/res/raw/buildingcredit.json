@@ -21,13 +21,7 @@
     "application_Link": ""
 
   },
-  {
-    "iv_bank": "(insert image link)",
-    "bank_Name": "Building Credit without a credit card",
-    "bank_Description":" - Pay student loans consistently, on time, and every month. \n - Take out an auto installment loan if you are looking to buy a car, agree on monthly payments, and find the best deal that suits you. \n - Obtain a secured loan. Some banks and credit unions offer credit-builder loans/passbook loans that are low-risk loans designed just for you to build credit. It is similar to a secured credit card.\nAsk for credit. If you already reliably pay your rent, utilities, other monthly bills, then you can ask for a track record on those items for some companies. Some landlords will be able to report your positive payment history to credit bureaus. \n",
-    "best_For": "",
-    "application_Link": ""
-  },
+
   {
     "iv_bank": "(insert image link)",
     "bank_Name": "Best tips on how to use your credit card: ",
@@ -39,14 +33,14 @@
   {
     "iv_Bank":"(insert image link)",
     "bank_Name":"WellsFargo CashBack College Card",
-    "bank_Description":"Card Description: Designed for college students who want to start building credit. Includes cash back rewards of 3% during the first 6 months. Has great features for tracking your credit score directly from the WellsFargo app.",
+    "bank_Description":"Designed for college students who want to start building credit. Includes cash back rewards of 3% during the first 6 months. Has great features for tracking your credit score directly from the WellsFargo app.",
     "best_For":"Best for: Building/Rebuilding Credit",
     "application_Link":"https://www.wellsfargo.com/credit-cards/cash-back-college-card/"
   },
   {
     "iv_Bank":"(insert image link)",
     "bank_Name":"Capital One Secured Mastercard",
-    "bank_Description":"Card Description: Designed for those students who may already have credit history. It does require an initial deposit of at least $49, $99, or $200 down that is used as security in case one fails to pay the credit card bill (acts as a safety net). There are no rewards or bonus offers, but it does have no foreign transaction fees.",
+    "bank_Description": "Designed for those students who may already have credit history. It does require an initial deposit of at least $49, $99, or $200 down that is used as security in case one fails to pay the credit card bill (acts as a safety net). There are no rewards or bonus offers, but it does have no foreign transaction fees.",
     "best_For":"Best for: Building Credit",
     "application_Link":"https://applynow.capitalone.com/?productId=11033&external_id=WWW_LPT44_ZZZ_ONL-SE_ZZZZZ_T_SEM2_ZZZZ_c_Zg__kenshoo_clickid__444500679524_662370"
   },
@@ -70,5 +64,14 @@
     "bank_Description":"Designed just for students. Able to earn cash back rewards while practicing responsible credit habits. Includes a good grade award of $20 by maintaining a 3.0 GPAor higher for the next 5 years. Earn 5% cash back on everyday purchases at different places. No FICO history required. ",
     "best_For":"Cash-back Rewards",
     "application_Link":"https://www.discover.com/credit-cards/student/it-card.html"
+  },
+
+  {
+    "iv_bank": "(insert image link)",
+    "bank_Name": "Building Credit without a credit card",
+    "bank_Description":" - Pay student loans consistently, on time, and every month. \n - Take out an auto installment loan if you are looking to buy a car, agree on monthly payments, and find the best deal that suits you.",
+    "best_For": "- Obtain a secured loan. Some banks and credit unions offer credit-builder loans/passbook loans that are low-risk loans designed just for you to build credit. It is similar to a secured credit card.\n ",
+    "application_Link": "- Ask for credit. If you already reliably pay your rent, utilities, other monthly bills, then you can ask for a track record on those items for some companies. Some landlords will be able to report your positive payment history to credit bureaus."
+
   }
 ]
