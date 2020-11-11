@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Budget Buddy</string>
+    <string-array name="itemType">
+        <item>Grocery</item>
+        <item>Retail</item>
+        <item>Fast food</item>
+        <item>Miscellaneous</item>
+    </string-array>
 </resources>
