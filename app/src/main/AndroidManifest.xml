@@ -14,10 +14,8 @@
         android:supportsRtl="true"
         android:usesCleartextTraffic="true"
         android:theme="@style/MyMaterialTheme">
-        <activity android:name=".LoginActivity"/>
         android:theme="@style/AppTheme">
-        <activity android:name=".Budget_Calculator"/>
-        <activity android:name=".">
+        <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
