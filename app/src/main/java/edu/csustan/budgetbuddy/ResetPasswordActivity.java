@@ -2,6 +2,7 @@ package edu.csustan.budgetbuddy;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -29,7 +30,9 @@ public class ResetPasswordActivity extends AppCompatActivity {
             ParseUser.requestPasswordResetInBackground(edEmail.getText().toString(), new RequestPasswordResetCallback() {
                 public void done(ParseException e) {
                     if (e == null) {
-                        Toast.makeText(ResetPasswordActivity.this, "An email was successfully sent with reset instructions.", Toast.LENGTH_LONG).show();
+                        Toast.makeText(ResetPasswordActivity.this, "An email was successfully sent with reset instructions. ", Toast.LENGTH_LONG).show();
+                        // We want to send the user back to login activity
+                        login();
                     } else {
                         Toast.makeText(ResetPasswordActivity.this, "Something went wrong. Look at the ParseException to see what's up.", Toast.LENGTH_LONG).show();
 
@@ -37,5 +40,11 @@ public class ResetPasswordActivity extends AppCompatActivity {
                 }
             });
         }
+    }
+
+    private void login() {
+        // Create the intent to go to main activity
+        Intent i = new Intent(this, LoginActivity.class);
+        startActivity(i);
     }
 }

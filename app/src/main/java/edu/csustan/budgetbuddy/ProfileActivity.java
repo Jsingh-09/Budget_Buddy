@@ -10,15 +10,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.parse.ParseUser;
 
-public class HomeActivity extends AppCompatActivity {
+public class ProfileActivity extends AppCompatActivity {
 
-    TextView tvName, tvEmail;
+    private TextView tvName;
+    private TextView tvEmail;
 
     Spinner spinner;
 
@@ -27,7 +27,7 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_profile);
         ParseUser currentUser = ParseUser.getCurrentUser();
 
 
@@ -35,7 +35,7 @@ public class HomeActivity extends AppCompatActivity {
 
         testFragment = new TestFragment();
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(HomeActivity.this,R.layout.custom_spinner, getResources().getStringArray(R.array.fragments));
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(ProfileActivity.this,R.layout.custom_spinner, getResources().getStringArray(R.array.fragments));
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
 
@@ -57,12 +57,12 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-        tvEmail = findViewById(R.id.tvName);
         tvName = findViewById(R.id.tvName);
+        tvEmail = findViewById(R.id.tvEmail);
 
         if(currentUser!=null) {
             tvName.setText(currentUser.getString("name"));
-            tvEmail.setText(currentUser.getString("name"));
+            tvEmail.setText(currentUser.getString("Email"));
         }
 
     }
@@ -77,7 +77,7 @@ public class HomeActivity extends AppCompatActivity {
         progress.setMessage("Loading ...");
         progress.show();
         ParseUser.logOut();
-        Intent intent = new Intent(HomeActivity.this, LoginActivity.class);
+        Intent intent = new Intent(ProfileActivity.this, LoginActivity.class);
         startActivity(intent);
         finish();
     }

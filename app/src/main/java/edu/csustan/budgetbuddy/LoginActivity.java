@@ -1,6 +1,5 @@
 package edu.csustan.budgetbuddy;
 
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -37,7 +36,7 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin = findViewById(R.id.btnLogin);
 
         if(ParseUser.getCurrentUser()!=null) {
-            Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+            Intent intent = new Intent(LoginActivity.this, ProfileActivity.class);
             startActivity(intent);
             finish();
         }
@@ -52,15 +51,20 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
+
     private void goMainActivity() {
         // Create the intent to go to main activity
-        Intent i = new Intent(this, HomeActivity.class);
+        Intent i = new Intent(this, ProfileActivity.class);
         startActivity(i);
     }
 
     private void login(String username, String password) {
         Log.i(TAG, "Attempting to Log In User: " + username);
-
+        if (TextUtils.isEmpty(username)){
+            edEmail.setError( "Email is required!" );
+        } else if (TextUtils.isEmpty(password)) {
+            edPassword.setError("Password is required!");
+        }
         ParseUser.logInInBackground(username, password, new LogInCallback() {
             @Override
             public void done(ParseUser user, ParseException e) {
@@ -94,7 +98,7 @@ public class LoginActivity extends AppCompatActivity {
 //                    progress.dismiss();
 //                    if (parseUser != null) {
 //                        Toast.makeText(LoginActivity.this, "Welcome back!", Toast.LENGTH_SHORT).show();
-//                        Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+//                        Intent intent = new Intent(LoginActivity.this, ProfileActivity.class);
 //                        startActivity(intent);
 //                        finish();
 //                    } else {

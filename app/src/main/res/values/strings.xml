@@ -8,6 +8,7 @@
     <string name="back4app_client_key">hryQYputh23AfEbCPdt9uwKa9K2t36la5SQEGdbf</string>
 
     <string-array name="fragments">
+        <item>Profile</item>
         <item>Home</item>
         <item>Building credit</item>
         <item>Track my Expenses</item>
@@ -16,4 +17,10 @@
     </string-array>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="passwordHint">Password</string>
+    <string name="emailHint">Email</string>
+    <string name="sign_up_for_budget_buddy"><u>Sign up for Budget Buddy</u></string>
+    <string name="forgot_your_password"><u>Forgot your Password</u></string>
+    <string name="login">Login</string>
+    <string name="this_is_profile_icon">This is Profile icon</string>
 </resources>

@@ -10,7 +10,6 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.parse.LogInCallback;
 import com.parse.ParseException;
 import com.parse.ParseUser;
 import com.parse.SignUpCallback;
@@ -56,7 +55,7 @@ public class SignupActivity extends AppCompatActivity {
                     progress.dismiss();
                     if (e == null) {
                         Toast.makeText(SignupActivity.this, "Welcome!", Toast.LENGTH_LONG).show();
-                        Intent intent = new Intent(SignupActivity.this, HomeActivity.class);
+                        Intent intent = new Intent(SignupActivity.this, ProfileActivity.class);
                         startActivity(intent);
                         finish();
                     } else {
@@ -67,4 +66,5 @@ public class SignupActivity extends AppCompatActivity {
             });
         }
     }
+
 }
