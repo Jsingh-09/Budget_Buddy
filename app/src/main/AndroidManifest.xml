@@ -17,7 +17,7 @@
         <activity android:name=".LoginActivity"/>
         android:theme="@style/AppTheme">
         <activity android:name=".Budget_Calculator"/>
-        <activity android:name=".MainActivity">
+        <activity android:name=".">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
