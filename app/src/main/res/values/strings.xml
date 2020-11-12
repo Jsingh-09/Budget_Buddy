@@ -18,11 +18,8 @@
     <string name="this_is_profile_icon">This is Profile icon</string>
     <string-array name="Items">
         <item>Profile</item>
-
-        <item>Home</item>
         <item>Building credit</item>
         <item>Track my Expenses</item>
-        <item>Saving Goal</item>
         <item>Budget Calculator</item>
     </string-array>
 </resources>
