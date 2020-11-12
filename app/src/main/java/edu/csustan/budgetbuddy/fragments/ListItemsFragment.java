@@ -67,7 +67,6 @@ public class ListItemsFragment extends Fragment {
 
         queryExpenses();
 
-
     }
     private void queryExpenses() {
         ParseQuery<Expense> query = ParseQuery.getQuery(Expense.class);
