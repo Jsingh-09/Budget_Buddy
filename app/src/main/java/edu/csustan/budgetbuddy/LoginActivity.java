@@ -23,7 +23,6 @@ public class LoginActivity extends AppCompatActivity {
     private static final String TAG = "LoginActivity";
     private EditText edEmail;
     private EditText edPassword;
-    private Button btnLogin;
 
 
     @Override
@@ -33,7 +32,7 @@ public class LoginActivity extends AppCompatActivity {
 
         edEmail = findViewById(R.id.edEmail);
         edPassword = findViewById(R.id.edPassword);
-        btnLogin = findViewById(R.id.btnLogin);
+        Button btnLogin = findViewById(R.id.btnLogin);
 
         if(ParseUser.getCurrentUser()!=null) {
             Intent intent = new Intent(LoginActivity.this, ProfileActivity.class);
@@ -81,34 +80,6 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
-
-//    public void login(String username, String password) {
-//        Log.i(TAG, "Attempting to Log In User: " + username);
-//        if (TextUtils.isEmpty(username)){
-//            edEmail.setError( "Email is required!" );
-//        } else if (TextUtils.isEmpty(password)){
-//            edPassword.setError( "Password is required!");
-//        } else {
-//            final ProgressDialog progress = new ProgressDialog(this);
-//            progress.setMessage("Loading ...");
-//            progress.show();
-//            ParseUser.logInInBackground(username, password, new LogInCallback() {
-//                @Override
-//                public void done(ParseUser parseUser, ParseException e) {
-//                    progress.dismiss();
-//                    if (parseUser != null) {
-//                        Toast.makeText(LoginActivity.this, "Welcome back!", Toast.LENGTH_SHORT).show();
-//                        Intent intent = new Intent(LoginActivity.this, ProfileActivity.class);
-//                        startActivity(intent);
-//                        finish();
-//                    } else {
-//                        ParseUser.logOut();
-//                        Toast.makeText(LoginActivity.this, e.getMessage(), Toast.LENGTH_LONG).show();
-//                    }
-//                }
-//            });
-//        }
-//    }
 
     public void signup(View view) {
         Intent intent = new Intent(LoginActivity.this, SignupActivity.class);
