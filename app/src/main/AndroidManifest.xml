@@ -14,10 +14,8 @@
         android:supportsRtl="true"
         android:usesCleartextTraffic="true"
         android:theme="@style/MyMaterialTheme">
-        <activity android:name=".LoginActivity"/>
         android:theme="@style/AppTheme">
-        <activity android:name=".Budget_Calculator"/>
-        <activity android:name=".MainActivity">
+        <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -27,8 +25,7 @@
     <activity android:name=".ResetPasswordActivity" />
     <activity android:name=".ProfileActivity" />
     <activity android:name=".SignupActivity" />
-        <activity android:name=".BuildingCreditActivity"
-        android:exported="true" />
+    <activity android:name=".Budget_Calculator" />
     </application>
 
 </manifest>

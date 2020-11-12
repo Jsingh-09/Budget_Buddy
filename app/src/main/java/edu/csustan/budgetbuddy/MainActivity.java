@@ -13,43 +13,11 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    /* added a comment to see if I could commit - Chris */
-    //adding comment - Steph
-    //added a comment - p
-
     private Button btnBudgetCalc;
     private Button btnLoginMainActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        btnBudgetCalc = (Button) findViewById(R.id.btnBudgetCalc);
-        btnBudgetCalc.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openBudgetCalc();
-            }
-        });
-
-        btnLoginMainActivity = (Button) findViewById(R.id.btnLoginMainActivity);
-        btnLoginMainActivity.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                openLogin();
-            }
-        });
     }
-
-    public void openBudgetCalc() {
-        Intent intent = new Intent(this, Budget_Calculator.class);
-        startActivity(intent);
-    }
-
-    public void openLogin() {
-        Intent intent = new Intent(this, LoginActivity.class);
-        startActivity(intent);
-    }
-
 }
