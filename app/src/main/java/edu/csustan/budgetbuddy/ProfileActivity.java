@@ -71,6 +71,11 @@ public class ProfileActivity extends AppCompatActivity {
                         startActivity(intent);
 
                     }
+                    else if (parent.getItemAtPosition(position).equals("Building Credit")) {
+                        Intent intent = new Intent(ProfileActivity.this, BuildingCreditActivity.class);
+                        startActivity(intent);
+
+                    }
                 }
 
             }
