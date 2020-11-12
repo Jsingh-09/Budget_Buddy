@@ -58,6 +58,7 @@ class ViewHolder extends RecyclerView.ViewHolder{
         tvItemLocation.setText(expense.getLocation());
         tvItemType.setText(expense.getItemType());
         tvItemAmount.setText(expense.getAmount());
+       // tvUsername.setText(expense.getUser().getUsername());
 
 
     }

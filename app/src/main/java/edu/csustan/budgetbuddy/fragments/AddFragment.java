@@ -30,7 +30,7 @@ import edu.csustan.budgetbuddy.R;
 public class AddFragment extends Fragment {
 
     public static final String TAG = "AddFragment";
-    private Spinner sTypes;
+    //private Spinner sTypes;
     private EditText etLocation;
     private EditText etAmount;
     private EditText etType;
@@ -65,28 +65,28 @@ public class AddFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 String amount = etAmount.getText().toString();
-                String type = etType.getText().toString();
+                String itemType = etType.getText().toString();
                 String location = etLocation.getText().toString();
-                if (location.isEmpty()) {
-                    Toast.makeText(getContext(), "Location Cannot be Empty", Toast.LENGTH_LONG).show();
+                if (location.isEmpty() || amount.isEmpty() || itemType.isEmpty()) {
+                    Toast.makeText(getContext(), "Fields cannot be Empty", Toast.LENGTH_LONG).show();
 
                     return;
                 }
                  ParseUser currentUser = ParseUser.getCurrentUser();
 
-                saveExpense(location, currentUser, amount, type);
+                saveExpense(location, currentUser, amount, itemType);
                // saveExpense(location, amount, type);
             }
         });
     }
 
     //
-    private void saveExpense(String location, ParseUser currentUser, String amount, String type) {
+    private void saveExpense(String location, ParseUser currentUser, String amount, String itemType) {
         Expense expense = new Expense();
         expense.setLocation(location);
         expense.setUser(currentUser);
         expense.setAmount(amount);
-        expense.setItemType(type);
+        expense.setItemType(itemType);
         expense.saveInBackground(new SaveCallback() {
             @Override
             public void done(ParseException e) {
@@ -97,6 +97,7 @@ public class AddFragment extends Fragment {
                 Log.i(TAG, "Expense saved!");
                 etLocation.setText("");
                 etAmount.setText("");
+                etType.setText("");
 
 
             }

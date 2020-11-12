@@ -10,6 +10,7 @@
     <!-- TODO: Update blank fragment layout -->
 
     <TextView
+        android:id="@+id/tvLocation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Location"
@@ -25,6 +26,7 @@
         android:padding="5dp" />
 
     <TextView
+        android:id="@+id/tvAmount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
