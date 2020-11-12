@@ -2,6 +2,7 @@ package edu.csustan.budgetbuddy;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -39,6 +40,8 @@ public class Budget_Calculator extends AppCompatActivity {
                 String numAmountBalance = amountBalance.getText().toString();
                 String numAverageExpenses = averageExpenses.getText().toString();
                 String numIncome = income.getText().toString();
+
+
 
                 if(numAmountBalance.matches("") || numAverageExpenses.matches("") || numIncome.matches("")){
                     Toast.makeText(getApplicationContext(), "Fill in empty fields",Toast.LENGTH_SHORT).show();

@@ -7,8 +7,7 @@
     <string name="back4app_app_id">mYr260IWiwsxSA2qdiXMA3wQ3Ux8n3AICL7vXDuV</string>
     <string name="back4app_client_key">hryQYputh23AfEbCPdt9uwKa9K2t36la5SQEGdbf</string>
 
-    <string-array name="fragments">
-        <item>Profile</item>
+    <string-array name="Items">
         <item>Home</item>
         <item>Building credit</item>
         <item>Track my Expenses</item>
