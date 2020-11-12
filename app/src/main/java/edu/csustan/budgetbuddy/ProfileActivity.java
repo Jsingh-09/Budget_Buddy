@@ -17,12 +17,19 @@ import android.widget.Toast;
 
 import com.parse.ParseUser;
 
+import edu.csustan.budgetbuddy.fragments.AddFragment;
+
 public class ProfileActivity extends AppCompatActivity {
 
     private TextView tvName;
     private TextView tvEmail;
 
     Spinner spinner;
+
+
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +41,11 @@ public class ProfileActivity extends AppCompatActivity {
         spinner = findViewById(R.id.spinner);
 
 
+
         ArrayAdapter<String> adapter = new ArrayAdapter<>(ProfileActivity.this,R.layout.custom_spinner, getResources().getStringArray(R.array.Items));
+
+
+
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
 
@@ -47,13 +58,18 @@ public class ProfileActivity extends AppCompatActivity {
                 }
                 else {
                     String item = parent.getItemAtPosition(position).toString();
-                    Toast.makeText(parent.getContext(), "Selected: " +item, Toast.LENGTH_LONG).show();
+                    Toast.makeText(parent.getContext(), "Selected: " + item, Toast.LENGTH_LONG).show();
 
-                    if (parent.getItemAtPosition(position).equals("Budget Calculator")){
+                    if (parent.getItemAtPosition(position).equals("Budget Calculator")) {
                         Intent intent = new Intent(ProfileActivity.this, Budget_Calculator.class);
                         startActivity(intent);
-                    } else if (parent.getItemAtPosition(position).equals("Home")){
+                    } else if (parent.getItemAtPosition(position).equals("Home")) {
                         Intent intent = new Intent(ProfileActivity.this, ProfileActivity.class);
+                    }
+                    else if (parent.getItemAtPosition(position).equals("Track my Expenses")) {
+                        Intent intent = new Intent(ProfileActivity.this, Track_Expenses.class);
+                        startActivity(intent);
+
                     }
                 }
 

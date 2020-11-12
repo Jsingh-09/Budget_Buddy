@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <item
+            android:id="@+id/action_graphs"
+            android:icon="@drawable/ic_baseline_pie_chart_24"
+            android:title="Graphs"
+            app:showAsAction="always" />
+        <item
+            android:id="@+id/action_list"
+            android:icon="@drawable/ic_baseline_list_24"
+            android:title="Expense List"
+            app:showAsAction="always" />
+        <item
+            android:id="@+id/action_add"
+            android:icon="@android:drawable/ic_menu_add"
+            android:title="Add Expense"
+            app:showAsAction="always" />
+</menu>
