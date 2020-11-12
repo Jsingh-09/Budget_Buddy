@@ -27,6 +27,7 @@
         <activity android:name=".ProfileActivity" />
         <activity android:name=".SignupActivity" />
         <activity android:name=".Budget_Calculator" />
+        <activity android:name=".BuildingCreditActivity" />
     </application>
 
 </manifest>
