@@ -10,6 +10,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -27,13 +29,13 @@ import edu.csustan.budgetbuddy.R;
  * Use the {@link AddFragment#} factory method to
  * create an instance of this fragment.
  */
-public class AddFragment extends Fragment {
+public class AddFragment extends Fragment implements AdapterView.OnItemSelectedListener {
 
     public static final String TAG = "AddFragment";
-    //private Spinner sTypes;
+    private Spinner sTypes;
     private EditText etLocation;
     private EditText etAmount;
-    private EditText etType;
+   // private EditText etType;
     private Button btnAdd;
 
 
@@ -52,41 +54,43 @@ public class AddFragment extends Fragment {
         etLocation = view.findViewById(R.id.etLocation);
         etAmount = view.findViewById(R.id.etAmount);
         btnAdd = view.findViewById(R.id.btnAddNew);
-        etType = view.findViewById(R.id.etType);
+       // etType = view.findViewById(R.id.etType);
+        sTypes = view.findViewById(R.id.sTypes);
 
-       /* sTypes = view.findViewById(R.id.sTypes);
+       sTypes = view.findViewById(R.id.sTypes);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getContext(), R.array.itemType, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         sTypes.setAdapter(adapter);
 
-        sTypes.setOnItemSelectedListener(this); */
+        sTypes.setOnItemSelectedListener(this);
 
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String type = sTypes.getSelectedItem().toString();
                 String amount = etAmount.getText().toString();
-                String itemType = etType.getText().toString();
+               // String itemType = etType.getText().toString();
                 String location = etLocation.getText().toString();
-                if (location.isEmpty() || amount.isEmpty() || itemType.isEmpty()) {
+                if (location.isEmpty() || amount.isEmpty() || type.isEmpty()) {
                     Toast.makeText(getContext(), "Fields cannot be Empty", Toast.LENGTH_LONG).show();
 
                     return;
                 }
                  ParseUser currentUser = ParseUser.getCurrentUser();
 
-                saveExpense(location, currentUser, amount, itemType);
+                saveExpense(location, currentUser, amount, type);
                // saveExpense(location, amount, type);
             }
         });
     }
 
     //
-    private void saveExpense(String location, ParseUser currentUser, String amount, String itemType) {
+    private void saveExpense(String location, ParseUser currentUser, String amount, String type) {
         Expense expense = new Expense();
         expense.setLocation(location);
         expense.setUser(currentUser);
         expense.setAmount(amount);
-        expense.setItemType(itemType);
+        expense.setItemType(type);
         expense.saveInBackground(new SaveCallback() {
             @Override
             public void done(ParseException e) {
@@ -95,16 +99,17 @@ public class AddFragment extends Fragment {
                     Toast.makeText(getContext(), "Error while saving", Toast.LENGTH_LONG).show();
                 }
                 Log.i(TAG, "Expense saved!");
+                Toast.makeText(getContext(), "Your Expense was saved!", Toast.LENGTH_LONG).show();
                 etLocation.setText("");
                 etAmount.setText("");
-                etType.setText("");
+               // etType.setText("");
 
 
             }
         });
     }
 
-   /* @Override
+    @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
         String text = adapterView.getItemAtPosition(i).toString();
         Toast.makeText(adapterView.getContext(), text, Toast.LENGTH_SHORT).show();
@@ -114,7 +119,7 @@ public class AddFragment extends Fragment {
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
 
-    } */
+    }
 
 
 }

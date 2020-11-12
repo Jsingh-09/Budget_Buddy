@@ -6,6 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     app:cardCornerRadius="8dp"
     android:layout_margin="5dp"
+
     android:padding="5dp">
 
     <LinearLayout
