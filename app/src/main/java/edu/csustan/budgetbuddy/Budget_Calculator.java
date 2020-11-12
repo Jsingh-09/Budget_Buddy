@@ -10,6 +10,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.DecimalFormat;
+
 public class Budget_Calculator extends AppCompatActivity {
 
     private EditText amountBalance;
@@ -40,31 +42,57 @@ public class Budget_Calculator extends AppCompatActivity {
                 String numAverageExpenses = averageExpenses.getText().toString();
                 String numIncome = income.getText().toString();
 
-                if(numAmountBalance.matches("") || numAverageExpenses.matches("") || numIncome.matches("")){
+                if(numAmountBalance.equals("") || numAverageExpenses.equals("") || numIncome.equals("") ){
                     Toast.makeText(getApplicationContext(), "Fill in empty fields",Toast.LENGTH_SHORT).show();
                 }
+                else if((notSingleDecimal(numAmountBalance) || notSingleDecimal(numAverageExpenses) || notSingleDecimal(numIncome))) {
+                    Toast.makeText(getApplicationContext(), "Too many decimals",Toast.LENGTH_SHORT).show();
+                }
+                else if(numAmountBalance.equals(".") || numAverageExpenses.equals(".") || numIncome.equals(".")) {
+                    Toast.makeText(getApplicationContext(), "Invalid input",Toast.LENGTH_SHORT).show();
+                }
                 else {
-                    int numRemainingBalance = Integer.parseInt(numAmountBalance) - Integer.parseInt(numAverageExpenses) + Integer.parseInt(numIncome);
-                    int numTotalDisposable = Integer.parseInt(numIncome) - Integer.parseInt(numAverageExpenses);
+                    String numRemainingBalance = formatDecimalCurrency(String.valueOf(Double.parseDouble(numAmountBalance) - Double.parseDouble(numAverageExpenses) + Double.parseDouble(numIncome)));
+                    String numTotalDisposable = formatDecimalCurrency(String.valueOf(Double.parseDouble(numIncome) - Double.parseDouble(numAverageExpenses)));
                     
-                    if(numRemainingBalance >= 0) {
-                        remainingBalance.setText("Remaining Balance: $" + String.valueOf(numRemainingBalance));
+                    if(Double.parseDouble(numRemainingBalance) >= 0) {
+                        remainingBalance.setText("Remaining Balance: $" + formatCommasCurrency(numRemainingBalance));
                     }
                     else {
-                        remainingBalance.setText("Remaining Balance: -$" + String.valueOf(Math.abs(numRemainingBalance)));
+                        remainingBalance.setText("Remaining Balance: -$" + formatCommasCurrency(String.valueOf(Math.abs(Double.parseDouble(numRemainingBalance)))));
                     }
-                    if(numTotalDisposable >= 0) {
-                        totalDisposable.setText("Total Disposable: $" + String.valueOf(numTotalDisposable));
+                    if(Double.parseDouble(numTotalDisposable) >= 0) {
+                        totalDisposable.setText("Total Disposable: $" + formatCommasCurrency(numTotalDisposable));
                         balance.setText("Good Job!");
                         balance.setTextColor(Color.parseColor("#008000"));
                     }
                     else {
-                        totalDisposable.setText("Total Disposable: -$" + String.valueOf(Math.abs(numTotalDisposable)));
+                        totalDisposable.setText("Total Disposable: -$" + formatCommasCurrency(String.valueOf(Math.abs(Double.parseDouble(numTotalDisposable)))));
                         balance.setText("You're spending too much");
                         balance.setTextColor(Color.parseColor("#DC143C"));
                     }
                 }
             }
         });
+    }
+
+    private static String formatDecimalCurrency(String number) {
+        DecimalFormat formatter = new DecimalFormat("###########0.00");
+        return formatter.format(Double.parseDouble(number));
+    }
+
+    private static String formatCommasCurrency(String number) {
+        DecimalFormat formatter = new DecimalFormat("###,###,###,##0.00");
+        return formatter.format(Double.parseDouble(number));
+    }
+
+    private static boolean notSingleDecimal(String number) {
+        int decimal = 0;
+        for (int i = 0; i < number.length(); i++) {
+            if (number.charAt(i) == '.') {
+                decimal += 1;
+            }
+        }
+        return (decimal > 1);
     }
 }
