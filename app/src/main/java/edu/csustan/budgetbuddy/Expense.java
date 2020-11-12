@@ -4,7 +4,7 @@ import com.parse.ParseClassName;
 import com.parse.ParseObject;
 import com.parse.ParseUser;
 
-@ParseClassName("Expense")
+@ParseClassName("Expenses")
 public class Expense extends ParseObject {
     public static final String KEY_LOCATION = "location";
     public static final String KEY_ITEMTYPE ="itemType";
@@ -42,7 +42,9 @@ public class Expense extends ParseObject {
     }
 
     public void setUser(ParseUser user) {
+
         put(KEY_USER, user);
     }
+
 
 }

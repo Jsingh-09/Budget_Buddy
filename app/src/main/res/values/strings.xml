@@ -22,4 +22,13 @@
         <item>Track my Expenses</item>
         <item>Budget Calculator</item>
     </string-array>
+
+
+    <string-array name="itemType">
+        <item>Groceries</item>
+        <item>Fast Food</item>
+        <item>Clothing</item>
+        <item>Entertainment</item>
+        <item>Miscellaneous</item>
+    </string-array>
 </resources>
