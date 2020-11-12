@@ -7,13 +7,17 @@ import androidx.fragment.app.FragmentTransaction;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.parse.ParseUser;
+
+import edu.csustan.budgetbuddy.fragments.AddFragment;
 
 public class ProfileActivity extends AppCompatActivity {
 
@@ -22,7 +26,10 @@ public class ProfileActivity extends AppCompatActivity {
 
     Spinner spinner;
 
-    TestFragment testFragment;
+
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,22 +40,44 @@ public class ProfileActivity extends AppCompatActivity {
 
         spinner = findViewById(R.id.spinner);
 
-        testFragment = new TestFragment();
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(ProfileActivity.this,R.layout.custom_spinner, getResources().getStringArray(R.array.fragments));
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(ProfileActivity.this,R.layout.custom_spinner, getResources().getStringArray(R.array.Items));
+
+
+
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
 
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int i, long id) {
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
-                // Add more cases base on our fragments(Pages)
-                switch (i) {
-                    case 0:
-                        setFragment(testFragment);
-                        break;
+                if(parent.getItemAtPosition(position).equals("Items")){
+
                 }
+                else {
+                    String item = parent.getItemAtPosition(position).toString();
+                    Toast.makeText(parent.getContext(), "Selected: " + item, Toast.LENGTH_LONG).show();
+
+                    if (parent.getItemAtPosition(position).equals("Budget Calculator")) {
+                        Intent intent = new Intent(ProfileActivity.this, Budget_Calculator.class);
+                        startActivity(intent);
+                    } else if (parent.getItemAtPosition(position).equals("Home")) {
+                        Intent intent = new Intent(ProfileActivity.this, ProfileActivity.class);
+                    }
+                    else if (parent.getItemAtPosition(position).equals("Track my Expenses")) {
+                        Intent intent = new Intent(ProfileActivity.this, Track_Expenses.class);
+                        startActivity(intent);
+
+                    }
+                    else if (parent.getItemAtPosition(position).equals("Building Credit")) {
+                        Intent intent = new Intent(ProfileActivity.this, BuildingCreditActivity.class);
+                        startActivity(intent);
+
+                    }
+                }
+
             }
 
             @Override
@@ -62,14 +91,9 @@ public class ProfileActivity extends AppCompatActivity {
 
         if(currentUser!=null) {
             tvName.setText(currentUser.getString("name"));
-            tvEmail.setText(currentUser.getString("Email"));
+            tvEmail.setText(currentUser.getString("email"));
         }
 
-    }
-
-    public void setFragment(Fragment fragment) {
-        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.main_frame, fragment);
     }
 
     public void login(View view) {

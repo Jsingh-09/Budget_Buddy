@@ -207,6 +207,7 @@
         android:layout_height="60dp"
         android:background="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -214,6 +215,8 @@
         android:id="@+id/tvBudgetCalculator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@android:dimen/app_icon_size"
+        android:layout_marginLeft="@android:dimen/app_icon_size"
         android:layout_marginTop="16dp"
         android:drawableEnd="@drawable/ic_calculate"
         android:drawablePadding="10dp"
@@ -223,7 +226,7 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.408"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
