@@ -49,6 +49,6 @@ public class Track_Expenses extends AppCompatActivity {
                     return true;
                 }
             });
-            bottomNavigationView.setSelectedItemId(R.id.action_list);
+            bottomNavigationView.setSelectedItemId(R.id.action_add);
         }
     }
