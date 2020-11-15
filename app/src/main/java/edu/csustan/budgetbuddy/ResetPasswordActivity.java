@@ -23,6 +23,7 @@ public class ResetPasswordActivity extends AppCompatActivity {
         edEmail = findViewById(R.id.edEmail);
     }
 
+    // Using the documentation from back4app for the user to receive a email to reset the password
     public void resetPassword(View view) {
         if (TextUtils.isEmpty(edEmail.getText())) {
             edEmail.setError("Email is required!");
@@ -43,7 +44,7 @@ public class ResetPasswordActivity extends AppCompatActivity {
     }
 
     private void login() {
-        // Create the intent to go to main activity
+        // Creating the intent to navigation to login page
         Intent i = new Intent(this, LoginActivity.class);
         startActivity(i);
     }
