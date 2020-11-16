@@ -33,6 +33,10 @@ public class Expense extends ParseObject {
     public String getAmount() {
         return getString(KEY_AMOUNT);
     }
+    public Double getCost(){                                            //getter method, Pulls down KEY_AMOUNT as a String
+        Double value = Double.parseDouble(getString(KEY_AMOUNT));       //then Parses it into a Double and stores it in a variable
+        return  value;                                                  //the variable is returned
+    }
     public void setAmount(String amount) {
         put(KEY_AMOUNT, amount);
     }
