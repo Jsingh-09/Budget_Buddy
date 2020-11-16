@@ -18,6 +18,8 @@ import com.parse.ParseUser;
 /**
  * A login screen that offers login via username/password
  */
+
+// https://guides.codepath.com/android/Building-Data-driven-Apps-with-Parse
 public class LoginActivity extends AppCompatActivity {
 
     // The EditText field and the button that are used for the login
