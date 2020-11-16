@@ -23,7 +23,7 @@ import edu.csustan.budgetbuddy.adapters.CreditAdapter;
 
 public class BuildingCreditActivity extends AppCompatActivity {
 
-
+    //Natasha
     //code for Building Credit function
     private RecyclerView mRecyclerView;
     private List<Object> viewItems = new ArrayList<>();
@@ -33,6 +33,7 @@ public class BuildingCreditActivity extends AppCompatActivity {
 
     private static final String TAG = "BuildingCreditActivity";
 
+    //connects Adapter activity to recycler view
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,6 +51,7 @@ public class BuildingCreditActivity extends AppCompatActivity {
 
     }
 
+    // inserts information from json document
     private void addItemsFromJSON() {
         try {
 
@@ -75,6 +77,7 @@ public class BuildingCreditActivity extends AppCompatActivity {
         }
     }
 
+    //imports json data into activity
     private String readJSONDataFromFile() throws IOException{
 
         InputStream inputStream = null;

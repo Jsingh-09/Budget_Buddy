@@ -11,6 +11,7 @@ import android.app.Application;
 public class AppParse extends Application {
 
     // Initializes Parse SDK as soon as the application is created
+    // This includes the client key and the Application Id so that the application can be connected to the backend using back4app database
     @Override
     public void onCreate() {
         super.onCreate();
