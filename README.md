@@ -1,4 +1,4 @@
-# Budget Buddy![BudgetBuddyIcon](https://i.imgur.com/oM2Jsl2.png =50x50)
+#  Budget Buddy <img src="https://i.imgur.com/oM2Jsl2.png" width="60" height="60">
 
 ## About Budget Buddy
 Budget Buddy is a budgeting app for students to create a habit of balancing their funds and ensuring that they can make ends meet.
