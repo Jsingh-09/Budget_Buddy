@@ -24,6 +24,7 @@ public class ResetPasswordActivity extends AppCompatActivity {
     }
 
     // Using the documentation from back4app for the user to receive a email to reset the password
+    // https://www.back4app.com/docs/get-started/welcome
     public void resetPassword(View view) {
         if (TextUtils.isEmpty(edEmail.getText())) {
             edEmail.setError("Email is required!");
