@@ -26,7 +26,7 @@ public class BuildingCreditActivity extends AppCompatActivity {
     //Natasha
     //code for Building Credit function
 
-    // reference and help from: 
+
     private RecyclerView mRecyclerView;
     private List<Object> viewItems = new ArrayList<>();
 
