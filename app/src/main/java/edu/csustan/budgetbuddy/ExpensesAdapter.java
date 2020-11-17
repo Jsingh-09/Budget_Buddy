@@ -11,11 +11,16 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
+//Stephanie's Code
+//Adapter for expense recyclerview
 public class ExpensesAdapter extends RecyclerView.Adapter<ExpensesAdapter.ViewHolder> {
-private Context context;
-private List<Expense> expenses;
 
-public ExpensesAdapter(Context context, List<Expense> expenses) {
+    private Context context;
+
+    private List<Expense> expenses;
+
+
+    public ExpensesAdapter(Context context, List<Expense> expenses) {
         this.context = context;
         this.expenses = expenses;
         }
@@ -29,20 +34,21 @@ public ExpensesAdapter(Context context, List<Expense> expenses) {
     }
 
     @Override
-public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Expense expense = expenses.get(position);
         holder.bind(expense);
         }
 
 
 
-@Override
-public int getItemCount() {
+
+    @Override
+    public int getItemCount() {
         return expenses.size();
         }
 
-
-class ViewHolder extends RecyclerView.ViewHolder{
+    //define viewholder
+    class ViewHolder extends RecyclerView.ViewHolder{
     private TextView tvItemLocation;
     private TextView tvItemType;
     private TextView tvItemAmount;
@@ -55,6 +61,7 @@ class ViewHolder extends RecyclerView.ViewHolder{
     }
 
     public void bind(Expense expense) {
+        //Bind the expense data to the view element
         tvItemLocation.setText(expense.getLocation());
         tvItemType.setText(expense.getItemType());
         tvItemAmount.setText(expense.getAmount());
