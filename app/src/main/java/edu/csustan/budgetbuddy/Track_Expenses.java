@@ -15,9 +15,11 @@ import edu.csustan.budgetbuddy.fragments.ListItemsFragment;
 
 public class Track_Expenses extends AppCompatActivity {
 
+    //Stephanie's Code
     private BottomNavigationView bottomNavigationView;
     final FragmentManager fragmentManager = getSupportFragmentManager();
 
+    //handle Navigation section
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,10 +47,12 @@ public class Track_Expenses extends AppCompatActivity {
                             //  fragment = fragment3;
                             break;
                     }
+
                     fragmentManager.beginTransaction().replace(R.id.flContainer, fragment).commit();
                     return true;
                 }
             });
+        //set default section
             bottomNavigationView.setSelectedItemId(R.id.action_add);
         }
     }

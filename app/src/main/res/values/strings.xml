@@ -23,7 +23,7 @@
         <item>Budget Calculator</item>
     </string-array>
 
-
+<!-- this is the list of items shown in Track my expenses - Stephanie -->
     <string-array name="itemType">
         <item>Groceries</item>
         <item>Fast Food</item>
