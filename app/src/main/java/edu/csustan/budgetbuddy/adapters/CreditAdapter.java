@@ -14,6 +14,8 @@ import java.util.List;
 import edu.csustan.budgetbuddy.Credit;
 import edu.csustan.budgetbuddy.R;
 
+//Natasha
+// connects Adapter and main activity together, identifies info for UI
 public class CreditAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     private static final int TYPE = 1;

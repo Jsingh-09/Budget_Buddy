@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import edu.csustan.budgetbuddy.fragments.AddFragment;
+import edu.csustan.budgetbuddy.fragments.GraphFragment;
 import edu.csustan.budgetbuddy.fragments.ListItemsFragment;
 
 public class Track_Expenses extends AppCompatActivity {
@@ -33,7 +34,7 @@ public class Track_Expenses extends AppCompatActivity {
                     Fragment fragment;
                     switch (menuItem.getItemId()) {
                         case R.id.action_graphs:
-                            fragment = new AddFragment();
+                            fragment = new GraphFragment();
                             // fragment = fragment1;
                             break;
                         case R.id.action_list:

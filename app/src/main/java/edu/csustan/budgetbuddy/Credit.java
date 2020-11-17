@@ -1,5 +1,7 @@
 package edu.csustan.budgetbuddy;
 
+//Natasha
+// Item information for building credit activity
 public class Credit {
 
     private final String bankName;

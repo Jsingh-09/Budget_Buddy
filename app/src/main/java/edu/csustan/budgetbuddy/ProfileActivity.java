@@ -24,12 +24,8 @@ public class ProfileActivity extends AppCompatActivity {
     private TextView tvName;
     private TextView tvEmail;
 
+    // Using spinner for the navigation menu
     Spinner spinner;
-
-
-
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,18 +33,16 @@ public class ProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
         ParseUser currentUser = ParseUser.getCurrentUser();
 
-
+        // Initializing the spinner
         spinner = findViewById(R.id.spinner);
 
-
-
+        // Array to show the list of the menu which is displayed at the top of the app on the profile page
         ArrayAdapter<String> adapter = new ArrayAdapter<>(ProfileActivity.this,R.layout.custom_spinner, getResources().getStringArray(R.array.Items));
-
-
 
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
 
+        // Spinner is connected to the different activities that are connected to the different pages
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -57,6 +51,7 @@ public class ProfileActivity extends AppCompatActivity {
 
                 }
                 else {
+                    // Using the if/else statement to navigate between the different pages
                     String item = parent.getItemAtPosition(position).toString();
                     Toast.makeText(parent.getContext(), "Selected: " + item, Toast.LENGTH_LONG).show();
 
@@ -96,6 +91,7 @@ public class ProfileActivity extends AppCompatActivity {
 
     }
 
+    // Displays a Loading page after the user login
     public void login(View view) {
         ProgressDialog progress = new ProgressDialog(this);
         progress.setMessage("Loading ...");

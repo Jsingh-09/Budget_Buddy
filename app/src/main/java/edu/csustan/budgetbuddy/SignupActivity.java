@@ -16,6 +16,7 @@ import com.parse.SignUpCallback;
 
 public class SignupActivity extends AppCompatActivity {
 
+    // Text field for the user to enter information to sign up for the app
     EditText edEmail, edPassword, edName, edConfirmPassword;
 
     @Override
@@ -23,12 +24,14 @@ public class SignupActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup);
 
+        // Initializing the Text fields
         edEmail = findViewById(R.id.edEmail);
         edPassword = findViewById(R.id.edPassword);
         edName = findViewById(R.id.edName);
         edConfirmPassword = findViewById(R.id.edConfirmPassword);
     }
 
+    // Method used to display error messages if the field is left empty
     public void signup(View view) {
         if (TextUtils.isEmpty(edName.getText())){
             edName.setError( "Name is required!" );
@@ -36,12 +39,14 @@ public class SignupActivity extends AppCompatActivity {
             edEmail.setError( "Email is required!" );
         } else if (TextUtils.isEmpty(edPassword.getText())){
             edPassword.setError( "Password is required!");
+            // Error shown if the password don't match the confirm password
         } else if (TextUtils.isEmpty(edConfirmPassword.getText())){
             edConfirmPassword.setError( "Confirm password is required!");
         }else if (!edPassword.getText().toString().equals(edConfirmPassword.getText().toString())){
             Toast.makeText(SignupActivity.this, "Password are not the same!", Toast.LENGTH_LONG).show();
         }else {
             final ProgressDialog progress = new ProgressDialog(this);
+            // Displaying a loading screen after the user clicks on sign up button
             progress.setMessage("Loading ...");
             progress.show();
             ParseUser user = new ParseUser();
