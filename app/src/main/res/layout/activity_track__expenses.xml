@@ -7,6 +7,8 @@
     android:orientation="vertical"
     tools:context=".Track_Expenses">
 
+  <!-- Stephanie's Code -->
+  <!-- Track my expense page layout -->
   <FrameLayout
       android:id="@+id/flContainer"
       android:layout_width="match_parent"

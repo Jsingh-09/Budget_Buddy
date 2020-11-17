@@ -24,12 +24,10 @@ import com.parse.SaveCallback;
 import edu.csustan.budgetbuddy.Expense;
 import edu.csustan.budgetbuddy.R;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link AddFragment#} factory method to
- * create an instance of this fragment.
- */
+//Stephanie's Code
+//this code covers the Add expenses fragment
 public class AddFragment extends Fragment implements AdapterView.OnItemSelectedListener {
+
 
     public static final String TAG = "AddFragment";
     private Spinner sTypes;
@@ -39,7 +37,7 @@ public class AddFragment extends Fragment implements AdapterView.OnItemSelectedL
     private Button btnAdd;
 
 
-
+    // The onCreateView method is called when Fragment should create its View object hierarchy
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -47,9 +45,12 @@ public class AddFragment extends Fragment implements AdapterView.OnItemSelectedL
         return inflater.inflate(R.layout.fragment_add, container, false);
     }
 
+    // This event is triggered soon after onCreateView().
+    // Any view setup should occur here.  E.g., view lookups and attaching view listeners.
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        // Setup any handles to view objects here
 
         etLocation = view.findViewById(R.id.etLocation);
         etAmount = view.findViewById(R.id.etAmount);

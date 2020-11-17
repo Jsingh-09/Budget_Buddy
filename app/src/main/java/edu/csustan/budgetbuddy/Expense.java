@@ -4,6 +4,7 @@ import com.parse.ParseClassName;
 import com.parse.ParseObject;
 import com.parse.ParseUser;
 
+//Stephanie's code
 @ParseClassName("Expenses")
 public class Expense extends ParseObject {
     public static final String KEY_LOCATION = "location";

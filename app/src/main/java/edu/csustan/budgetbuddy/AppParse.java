@@ -16,7 +16,7 @@ public class AppParse extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        // Register your parse models
+        // Register your parse models - Stephanie
         ParseObject.registerSubclass(Expense.class);
 
         Parse.initialize(new Parse.Configuration.Builder(this)

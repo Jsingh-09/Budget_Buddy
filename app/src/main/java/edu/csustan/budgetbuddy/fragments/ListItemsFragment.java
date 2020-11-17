@@ -25,15 +25,12 @@ import edu.csustan.budgetbuddy.Expense;
 import edu.csustan.budgetbuddy.ExpensesAdapter;
 import edu.csustan.budgetbuddy.R;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link ListItemsFragment#} factory method to
- * create an instance of this fragment.
- */
+//Stephanie's Code
+//this fragment covers the expense list
 public class ListItemsFragment extends Fragment {
 
     public static final String TAG = "ListItemsFragment";
-    private RecyclerView rvExpenses;
+    private RecyclerView rvExpenses;   //reference to recycler view
     private ExpensesAdapter adapter;
     private List<Expense> allExpenses;
 
@@ -46,6 +43,7 @@ public class ListItemsFragment extends Fragment {
 
     }
 
+    // The onCreateView method is called when Fragment should create its View object hierarchy
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -53,26 +51,32 @@ public class ListItemsFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_list_items, container, false);
     }
 
+    // This event is triggered soon after onCreateView().
+    // Any view setup should occur here.  E.g., view lookups and attaching view listeners.
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        // Setup any handles to view objects here
         rvExpenses = view.findViewById(R.id.rvExpenses);
 
         allExpenses = new ArrayList<>();
+
+        //create adapter
         adapter = new ExpensesAdapter(getContext(), allExpenses);
-
+        //set adapter on the recycler view
         rvExpenses.setAdapter(adapter);
-
+        //set the layout manager on the recycler view
         rvExpenses.setLayoutManager(new LinearLayoutManager(getContext()));
 
         queryExpenses();
 
     }
+    //create the data source
     private void queryExpenses() {
         ParseQuery<Expense> query = ParseQuery.getQuery(Expense.class);
         query.include(Expense.KEY_USER);
-        query.whereEqualTo(Expense.KEY_USER, ParseUser.getCurrentUser());
-        query.addDescendingOrder(Expense.KEY_CREATED);
+        query.whereEqualTo(Expense.KEY_USER, ParseUser.getCurrentUser()); //pulls only the data  of the user who is signed in
+        query.addDescendingOrder(Expense.KEY_CREATED); //places most recent expense at the top
         query.findInBackground(new FindCallback<Expense>() {
             @Override
             public void done(List<Expense> expenses, ParseException e) {
