@@ -1,3 +1,7 @@
+//Author: Jorge Hernandez Ortega
+//The following code was partially adapted using the AnyChart documentation: https://github.com/AnyChart/AnyChart-Android
+//The following code was partially adapted using the Back4App documentation: https://www.back4app.com/docs/get-started/welcome
+
 package edu.csustan.budgetbuddy.fragments;
 
 import android.os.Bundle;
@@ -43,7 +47,6 @@ public class GraphFragment extends Fragment {
         // Inflate the layout for this fragment
         final View chartView =  inflater.inflate(R.layout.fragment_graph, container, false);    //View that is returned at the end of the method
         List<Expense> dataList;                                                                             //List used in ParseQuery, Stores Expense objects
-                                                                                                            //The following is partially adapted using the Back4App documentation: https://www.back4app.com/docs/get-started/welcome
         ParseQuery<Expense> query = ParseQuery.getQuery(Expense.class);                                     //initiates a parseQuery based on the Expense class
         query.whereEqualTo("user", ParseUser.getCurrentUser());                                             //query parameter that calls info only from the currently logged in user
         query.include(Expense.KEY_ITEMTYPE);                                                                //query parameter that includes Expense type
@@ -63,7 +66,6 @@ public class GraphFragment extends Fragment {
 
                     data.add(new ValueDataEntry(objects.getItemType(), objects.getCost()));                 //adds Expense type and amount as a new DataEntry into the List data
                 }
-                                                                                                            //The following was partially adapted using the AnyChart documentation: https://github.com/AnyChart/AnyChart-Android
                 Pie pie = AnyChart.pie();                                                                   //initiates a new chart that is a Pie chart
                 pie.data(data);                                                                             //feeds the API the List data to populate the Pie chart
 
