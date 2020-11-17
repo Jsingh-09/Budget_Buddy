@@ -5,8 +5,11 @@ import com.parse.ParseObject;
 import com.parse.ParseUser;
 
 //Stephanie's code
+//This class represents the database class "Expenses" and its objects
 @ParseClassName("Expenses")
 public class Expense extends ParseObject {
+
+
     public static final String KEY_LOCATION = "location";
     public static final String KEY_ITEMTYPE ="itemType";
     public static final String KEY_AMOUNT = "amount";
@@ -14,6 +17,7 @@ public class Expense extends ParseObject {
     public static final String KEY_CREATED = "createdAt";
 
 
+    //define getter and setters
     public String getLocation() {
         return getString(KEY_LOCATION);
     }
