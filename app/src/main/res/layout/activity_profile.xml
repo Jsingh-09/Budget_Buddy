@@ -5,46 +5,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fadingEdge="horizontal|vertical"
     android:orientation="vertical"
+    android:visibility="visible"
     tools:context=".ProfileActivity">
 
-    <androidx.appcompat.widget.Toolbar
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorAccent">
-
-        <Spinner
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/spinner"
-            android:backgroundTint="@color/colorPrimary"
-            android:layout_gravity="start"/>
-
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/main_frame"/>
-
-
-    </androidx.appcompat.widget.Toolbar>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="240dp"
-            android:background="@color/colorPrimary" />
-
-        <ImageView
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="170dp"
-            android:src="@drawable/icon_budget_buddy" />
-
-    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -52,36 +17,65 @@
         android:orientation="vertical"
         android:padding="30dp">
 
+        <ImageView
+
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:src="@drawable/icon_budget_buddy" />
+
         <TextView
             android:id="@+id/tvName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Username"
-            android:gravity="center"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textColor="@color/colorAccent"
             android:textSize="30dp"
-            android:textStyle="bold"
-            android:layout_marginBottom="10dp"/>
+            android:textStyle="bold" />
+
 
         <TextView
             android:id="@+id/tvEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:text="Email"
-            android:gravity="center"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textColor="@color/colorAccent"
             android:textSize="20dp"
-            android:textStyle="bold"
-            android:layout_marginBottom="100dp"/>
+            android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/budget_calculator"
+            android:layout_width="182dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorWhite"
+            app:srcCompat="@drawable/budget" />
+
+        <ImageButton
+            android:id="@+id/building_credit"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:layout_marginLeft="150dp"
+            android:layout_marginBottom="0dp"
+            android:background="@color/colorWhite"
+            app:srcCompat="@drawable/bank" />
 
         <Button
             android:id="@+id/button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Logout"
+            android:layout_marginTop="60dp"
             android:background="@drawable/button_background"
+            android:onClick="login"
+            android:text="Logout"
             android:textColor="@color/colorWhite"
-            android:layout_marginBottom="20dp"
-            android:textStyle="bold"
-            android:onClick="login"/>
+            android:textStyle="bold" />
+
+
     </LinearLayout>
 
 

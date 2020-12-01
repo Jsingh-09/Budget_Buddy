@@ -12,6 +12,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,8 +26,9 @@ public class ProfileActivity extends AppCompatActivity {
     private TextView tvName;
     private TextView tvEmail;
 
-    // Using spinner for the navigation menu
-    Spinner spinner;
+    ImageButton budget_calculator_button;
+    ImageButton building_credit_button;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,51 +36,20 @@ public class ProfileActivity extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
         ParseUser currentUser = ParseUser.getCurrentUser();
 
-        // Initializing the spinner
-        spinner = findViewById(R.id.spinner);
-
-        // Array to show the list of the menu which is displayed at the top of the app on the profile page
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(ProfileActivity.this,R.layout.custom_spinner, getResources().getStringArray(R.array.Items));
-
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
-
-        // Spinner is connected to the different activities that are connected to the different pages
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        budget_calculator_button = (ImageButton) findViewById(R.id.budget_calculator);
+        budget_calculator_button.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-                if(parent.getItemAtPosition(position).equals("Items")){
-
-                }
-                else {
-                    // Using the if/else statement to navigate between the different pages
-                    String item = parent.getItemAtPosition(position).toString();
-                    Toast.makeText(parent.getContext(), "Selected: " + item, Toast.LENGTH_LONG).show();
-
-                    if (parent.getItemAtPosition(position).equals("Budget Calculator")) {
-                        Intent intent = new Intent(ProfileActivity.this, Budget_Calculator.class);
-                        startActivity(intent);
-                    } else if (parent.getItemAtPosition(position).equals("Home")) {
-                        Intent intent = new Intent(ProfileActivity.this, ProfileActivity.class);
-                    }
-                    else if (parent.getItemAtPosition(position).equals("Track my Expenses")) {
-                        Intent intent = new Intent(ProfileActivity.this, Track_Expenses.class);
-                        startActivity(intent);
-
-                    }
-                    else if (parent.getItemAtPosition(position).equals("Building Credit")) {
-                        Intent intent = new Intent(ProfileActivity.this, BuildingCreditActivity.class);
-                        startActivity(intent);
-
-                    }
-                }
-
+            public void onClick(View v) {
+                Intent intentLoadNewActivity = new Intent(ProfileActivity.this, Budget_Calculator.class);
+                startActivity(intentLoadNewActivity);
             }
-
+        });
+        building_credit_button = (ImageButton) findViewById(R.id.building_credit);
+        building_credit_button.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
+            public void onClick(View v) {
+                Intent intentLoadNewActivity = new Intent(ProfileActivity.this, BuildingCreditActivity.class);
+                startActivity(intentLoadNewActivity);
             }
         });
 
