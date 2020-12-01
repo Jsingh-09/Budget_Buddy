@@ -9,9 +9,18 @@
     <!-- Stephanie's Code -->
     <!-- Recycler view for displaying expenses -->
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <include
+            layout="@layout/toolbar_layout"></include>
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvExpenses"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+    </LinearLayout>
+
 </FrameLayout>

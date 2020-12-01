@@ -4,17 +4,26 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
+import android.widget.Toolbar;
 
+import com.google.android.material.snackbar.Snackbar;
 import com.parse.FindCallback;
+import com.parse.GetCallback;
 import com.parse.ParseException;
+import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.ParseUser;
 
@@ -33,6 +42,7 @@ public class ListItemsFragment extends Fragment {
     private RecyclerView rvExpenses;   //reference to recycler view
     private ExpensesAdapter adapter;
     private List<Expense> allExpenses;
+   //Toolbar toolbar;
 
 
 
@@ -57,6 +67,11 @@ public class ListItemsFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         // Setup any handles to view objects here
+        //androidx.appcompat.widget.Toolbar toolbar = (androidx.appcompat.widget.Toolbar) view.findViewById(R.id.toolbar);
+     // ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
+       //
+
+
         rvExpenses = view.findViewById(R.id.rvExpenses);
 
         allExpenses = new ArrayList<>();
@@ -70,7 +85,54 @@ public class ListItemsFragment extends Fragment {
 
         queryExpenses();
 
+
+
+
+        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(simpleCallback);
+        itemTouchHelper.attachToRecyclerView(rvExpenses);
+
+        adapter.setOnItemClickListener(new ExpensesAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(int position) {
+              // Toast.makeText(getContext(), "item", Toast.LENGTH_SHORT).show();
+                // allExpenses.get(position);
+            }
+
+            @Override
+            public void onItemLongClicked(int position) {
+                //String currentObject = getString(position).toString();
+
+
+            }
+        });
+
     }
+
+
+    ItemTouchHelper.SimpleCallback simpleCallback = new ItemTouchHelper.SimpleCallback(0,  ItemTouchHelper.RIGHT) {
+        @Override
+        public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+            return false;
+        }
+
+        @Override
+        public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+            final int position = viewHolder.getAdapterPosition();
+            switch (direction) {
+
+                case ItemTouchHelper.RIGHT:
+                    allExpenses.remove(position);
+                   // allExpenses.remove(Expense.KEY_Object);
+                    adapter.notifyItemRemoved(position);
+
+
+
+                    break;
+
+            }
+        }
+    };
+
     //create the data source
     private void queryExpenses() {
         ParseQuery<Expense> query = ParseQuery.getQuery(Expense.class);
@@ -91,7 +153,17 @@ public class ListItemsFragment extends Fragment {
 
             }
         });
-
-
     }
+
+   /*     //delete data
+    private void deleteExpense() {
+        ParseQuery<Expense> delete = ParseQuery.getQuery(Expense.class);
+        delete.whereEqualTo(Expense.KEY_Object, )
+    } */
+
+
+
+
+
+
 }

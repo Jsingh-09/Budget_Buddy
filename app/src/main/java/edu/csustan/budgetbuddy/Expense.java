@@ -15,6 +15,7 @@ public class Expense extends ParseObject {
     public static final String KEY_AMOUNT = "amount";
     public static final String KEY_USER = "user";
     public static final String KEY_CREATED = "createdAt";
+    public static final String KEY_Object = "objectId";
 
 
     //define getter and setters
@@ -53,6 +54,10 @@ public class Expense extends ParseObject {
     public void setUser(ParseUser user) {
 
         put(KEY_USER, user);
+    }
+
+    public String getObject() {
+        return getString(KEY_Object);
     }
 
 
