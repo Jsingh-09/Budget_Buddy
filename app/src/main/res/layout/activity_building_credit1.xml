@@ -8,9 +8,4 @@
     android:layout_height="match_parent"
     android:background="#039BE5"
     android:id="@+id/recview"
-    tools:context=".BuildingCredit">
-
-
-
-
-</androidx.recyclerview.widget.RecyclerView>
+    tools:context=".BuildingCredit"/>

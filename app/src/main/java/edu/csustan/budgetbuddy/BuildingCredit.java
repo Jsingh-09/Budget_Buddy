@@ -113,7 +113,7 @@ public class BuildingCredit extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu)
     {
-        getMenuInflater().inflate(R.menu.credit_menu,menu);
+        getMenuInflater().inflate(R.menu.credit_menu, menu);
         MenuItem item = menu.findItem(R.id.search_menu);
 
         SearchView searchView = (SearchView)item.getActionView();
