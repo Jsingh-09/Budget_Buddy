@@ -9,6 +9,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.parse.ParseObject;
+
 import java.util.List;
 
 //Stephanie's Code
@@ -47,6 +49,8 @@ public class ExpensesAdapter extends RecyclerView.Adapter<ExpensesAdapter.ViewHo
     }
 
     public void deleteItem(int position) {
+        Expense expense = expenses.get(position);
+        expense.deleteInBackground();
         
     }
 
@@ -77,6 +81,17 @@ public class ExpensesAdapter extends RecyclerView.Adapter<ExpensesAdapter.ViewHo
         tvItemType = itemView.findViewById(R.id.tvItemType);
         tvItemAmount = itemView.findViewById(R.id.tvItemAmount);
 
+
+
+    }
+
+    public void bind(Expense expense) {
+        //Bind the expense data to the view element
+        tvItemLocation.setText(expense.getLocation());
+        tvItemType.setText(expense.getItemType());
+        tvItemAmount.setText(expense.getAmount());
+       // tvUsername.setText(expense.getUser().getUsername());
+
         itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -101,15 +116,6 @@ public class ExpensesAdapter extends RecyclerView.Adapter<ExpensesAdapter.ViewHo
             }
         });
 
-
-    }
-
-    public void bind(Expense expense) {
-        //Bind the expense data to the view element
-        tvItemLocation.setText(expense.getLocation());
-        tvItemType.setText(expense.getItemType());
-        tvItemAmount.setText(expense.getAmount());
-       // tvUsername.setText(expense.getUser().getUsername());
 
 
     }

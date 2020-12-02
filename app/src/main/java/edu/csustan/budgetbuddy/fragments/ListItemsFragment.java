@@ -20,6 +20,7 @@ import android.widget.Toast;
 import android.widget.Toolbar;
 
 import com.google.android.material.snackbar.Snackbar;
+import com.parse.DeleteCallback;
 import com.parse.FindCallback;
 import com.parse.GetCallback;
 import com.parse.ParseException;
@@ -100,7 +101,8 @@ public class ListItemsFragment extends Fragment {
 
             @Override
             public void onItemLongClicked(int position) {
-                //String currentObject = getString(position).toString();
+               // adapter.deleteItem(position);
+
 
 
             }
@@ -108,7 +110,7 @@ public class ListItemsFragment extends Fragment {
 
     }
 
-
+    //swipe delete feature
     ItemTouchHelper.SimpleCallback simpleCallback = new ItemTouchHelper.SimpleCallback(0,  ItemTouchHelper.RIGHT) {
         @Override
         public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
@@ -117,19 +119,12 @@ public class ListItemsFragment extends Fragment {
 
         @Override
         public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
-            final int position = viewHolder.getAdapterPosition();
-            switch (direction) {
+            adapter.deleteItem(viewHolder.getAdapterPosition());
 
-                case ItemTouchHelper.RIGHT:
-                    allExpenses.remove(position);
-                   // allExpenses.remove(Expense.KEY_Object);
-                    adapter.notifyItemRemoved(position);
+            allExpenses.remove(viewHolder.getAdapterPosition());
+            adapter.notifyItemRemoved(viewHolder.getAdapterPosition());
+            Toast.makeText(getContext(), "item deleted", Toast.LENGTH_SHORT).show();
 
-
-
-                    break;
-
-            }
         }
     };
 
@@ -154,15 +149,6 @@ public class ListItemsFragment extends Fragment {
             }
         });
     }
-
-   /*     //delete data
-    private void deleteExpense() {
-        ParseQuery<Expense> delete = ParseQuery.getQuery(Expense.class);
-        delete.whereEqualTo(Expense.KEY_Object, )
-    } */
-
-
-
 
 
 
