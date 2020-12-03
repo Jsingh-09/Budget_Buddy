@@ -1,10 +1,12 @@
 package edu.csustan.budgetbuddy.fragments;
 
+import android.graphics.Canvas;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -34,6 +36,7 @@ import java.util.List;
 import edu.csustan.budgetbuddy.Expense;
 import edu.csustan.budgetbuddy.ExpensesAdapter;
 import edu.csustan.budgetbuddy.R;
+import it.xabaras.android.recyclerview.swipedecorator.RecyclerViewSwipeDecorator;
 
 //Stephanie's Code
 //this fragment covers the expense list
@@ -125,6 +128,16 @@ public class ListItemsFragment extends Fragment {
             adapter.notifyItemRemoved(viewHolder.getAdapterPosition());
             Toast.makeText(getContext(), "item deleted", Toast.LENGTH_SHORT).show();
 
+        }
+
+        @Override
+        public void onChildDraw(@NonNull Canvas c, @NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, float dX, float dY, int actionState, boolean isCurrentlyActive) {
+            new RecyclerViewSwipeDecorator.Builder(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive)
+                    .addSwipeRightBackgroundColor(ContextCompat.getColor(getContext(), R.color.colorAccent ))
+                    .addSwipeRightActionIcon(R.drawable.ic_baseline_delete_forever_24_white)
+                    .create()
+                    .decorate();
+            super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive);
         }
     };
 
