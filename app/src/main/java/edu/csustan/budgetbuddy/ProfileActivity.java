@@ -28,6 +28,8 @@ public class ProfileActivity extends AppCompatActivity {
 
     ImageButton budget_calculator_button;
     ImageButton building_credit_button;
+    ImageButton saving_goal_button;
+    ImageButton tracking_expense_button;
 
 
     @Override
@@ -49,6 +51,22 @@ public class ProfileActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intentLoadNewActivity = new Intent(ProfileActivity.this, BuildingCreditActivity.class);
+                startActivity(intentLoadNewActivity);
+            }
+        });
+        saving_goal_button = (ImageButton) findViewById(R.id.saving_button);
+        saving_goal_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentLoadNewActivity = new Intent(ProfileActivity.this, Saving.class);
+                startActivity(intentLoadNewActivity);
+            }
+        });
+        tracking_expense_button = (ImageButton) findViewById(R.id.tracking_button);
+        tracking_expense_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentLoadNewActivity = new Intent(ProfileActivity.this, Track_Expenses.class);
                 startActivity(intentLoadNewActivity);
             }
         });
