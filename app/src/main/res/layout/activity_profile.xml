@@ -5,28 +5,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fadingEdge="horizontal|vertical"
     android:orientation="vertical"
+    android:visibility="visible"
     tools:context=".ProfileActivity">
-
-    <androidx.appcompat.widget.Toolbar
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorAccent">
-
-        <Spinner
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/spinner"
-            android:backgroundTint="@color/colorPrimary"
-            android:layout_gravity="start"/>
-
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/main_frame"/>
-
-
-    </androidx.appcompat.widget.Toolbar>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -34,56 +16,151 @@
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="240dp"
+            android:layout_height="180dp"
             android:background="@color/colorPrimary" />
 
         <ImageView
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="170dp"
-            android:src="@drawable/icon_budget_buddy" />
-
-    </RelativeLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="30dp">
-
+            android:background="@drawable/icon_budget_buddy"
+            android:contentDescription="@string/this_is_profile_icon"
+            />
         <TextView
             android:id="@+id/tvName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Username"
-            android:gravity="center"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textColor="@color/colorWhite"
             android:textSize="30dp"
-            android:textStyle="bold"
-            android:layout_marginBottom="10dp"/>
-
+            android:layout_marginTop="110dp"
+            android:textStyle="bold" />
         <TextView
             android:id="@+id/tvEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:text="Email"
-            android:gravity="center"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textColor="@color/colorWhite"
+            android:layout_marginTop="150dp"
             android:textSize="20dp"
-            android:textStyle="bold"
-            android:layout_marginBottom="100dp"/>
+            android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/budget_calculator"
+            android:layout_width="183dp"
+            android:layout_height="187dp"
+            android:layout_marginStart="200dp"
+            android:layout_marginTop="420dp"
+            android:background="@null"
+            app:srcCompat="@drawable/budget" />
+
+        <ImageButton
+            android:id="@+id/building_credit"
+            android:layout_width="183dp"
+            android:layout_height="187dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="200dp"
+            android:layout_marginRight="50dp"
+            android:background="@null"
+            app:srcCompat="@drawable/bank" />
+
+        <ImageButton
+            android:id="@+id/saving_button"
+            android:layout_width="183dp"
+            android:layout_height="187dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="420dp"
+            android:background="@null"
+            app:srcCompat="@drawable/incentive" />
+
+        <ImageButton
+            android:id="@+id/tracking_button"
+            android:layout_width="183dp"
+            android:layout_height="187dp"
+            android:layout_marginStart="200dp"
+            android:layout_marginTop="200dp"
+            android:background="@null"
+            app:srcCompat="@drawable/investment" />
 
         <Button
             android:id="@+id/button"
-            android:layout_width="match_parent"
+            android:layout_width="339dp"
             android:layout_height="wrap_content"
-            android:text="Logout"
+            android:layout_marginTop="660dp"
             android:background="@drawable/button_background"
+            android:onClick="login"
+            android:text="Logout"
+            android:layout_centerHorizontal="true"
             android:textColor="@color/colorWhite"
-            android:layout_marginBottom="20dp"
-            android:textStyle="bold"
-            android:onClick="login"/>
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/saving_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/saving_button"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="0dp"
+            android:layout_alignBaseline="@id/saving_button"
+            android:inputType="textPersonName"
+            android:background="@null"
+            android:text="Saving Goals"
+            android:textSize="14sp"
+            android:textStyle="normal|bold|italic" />
+
+        <EditText
+            android:id="@+id/calculator_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/saving_button"
+            android:layout_marginLeft="95dp"
+            android:layout_marginTop="0dp"
+            android:layout_toRightOf="@id/saving_text"
+            android:inputType="textPersonName"
+            android:text="Budget Calculator"
+            android:background="@null"
+            android:textSize="14sp"
+            android:textStyle="normal|bold|italic" />
+
+        <EditText
+            android:id="@+id/expense_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tracking_button"
+            android:layout_marginLeft="90dp"
+            android:layout_marginTop="0dp"
+            android:layout_toRightOf="@id/credit_text"
+            android:inputType="textPersonName"
+            android:text="Track my Expense"
+            android:background="@null"
+            android:textSize="14sp"
+            android:textStyle="normal|bold|italic" />
+
+        <EditText
+            android:id="@+id/credit_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/building_credit"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="0dp"
+            android:inputType="textPersonName"
+            android:singleLine="false"
+            android:text="Building Credit"
+            android:background="@null"
+            android:textSize="14sp"
+            android:textStyle="normal|bold|italic" />
+
+
+    </RelativeLayout>
+
+
     </LinearLayout>
 
-
-</LinearLayout>
 

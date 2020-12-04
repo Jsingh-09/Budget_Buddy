@@ -16,6 +16,7 @@
     <string name="forgot_your_password"><u>Forgot your Password</u></string>
     <string name="login">Login</string>
     <string name="this_is_profile_icon">This is Profile icon</string>
+    <string name="search_menu">Search Menu</string>
     <string-array name="Items">
         <item>Profile</item>
         <item>Building Credit</item>

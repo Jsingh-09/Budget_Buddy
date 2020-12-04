@@ -26,6 +26,8 @@ public class Track_Expenses extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_track__expenses);
 
+
+
             bottomNavigationView = findViewById(R.id.bottomNavigation);
 
             bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {

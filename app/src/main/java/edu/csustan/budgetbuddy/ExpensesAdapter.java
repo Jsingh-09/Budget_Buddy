@@ -9,6 +9,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.parse.ParseObject;
+
 import java.util.List;
 
 //Stephanie's Code
@@ -18,6 +20,17 @@ public class ExpensesAdapter extends RecyclerView.Adapter<ExpensesAdapter.ViewHo
     private Context context;
 
     private List<Expense> expenses;
+    private OnItemClickListener mListener;
+
+    public interface OnItemClickListener {
+        void onItemClick(int position);
+        void onItemLongClicked(int position);
+    }
+
+    public void setOnItemClickListener(OnItemClickListener listener){
+        mListener = listener;
+
+    }
 
 
     public ExpensesAdapter(Context context, List<Expense> expenses) {
@@ -31,7 +44,16 @@ public class ExpensesAdapter extends RecyclerView.Adapter<ExpensesAdapter.ViewHo
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.item_expense, parent, false);
         return new ViewHolder(view);
+
+
     }
+
+    public void deleteItem(int position) {
+        Expense expense = expenses.get(position);
+        expense.deleteInBackground();
+        
+    }
+
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
@@ -58,6 +80,9 @@ public class ExpensesAdapter extends RecyclerView.Adapter<ExpensesAdapter.ViewHo
         tvItemLocation = itemView.findViewById(R.id.tvItemLocation);
         tvItemType = itemView.findViewById(R.id.tvItemType);
         tvItemAmount = itemView.findViewById(R.id.tvItemAmount);
+
+
+
     }
 
     public void bind(Expense expense) {
@@ -67,9 +92,35 @@ public class ExpensesAdapter extends RecyclerView.Adapter<ExpensesAdapter.ViewHo
         tvItemAmount.setText(expense.getAmount());
        // tvUsername.setText(expense.getUser().getUsername());
 
+        itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (mListener != null) {
+                    int position = getAdapterPosition();
+                    if (position != RecyclerView.NO_POSITION) {
+                        mListener.onItemClick(position);
+                    }
+                }
+            }
+        });
+        itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (mListener != null) {
+                    int position = getAdapterPosition();
+                    if (position != RecyclerView.NO_POSITION) {
+                        mListener.onItemLongClicked(position);
+                    }
+                }
+
+            }
+        });
+
+
 
     }
 }
+
 
 
 }

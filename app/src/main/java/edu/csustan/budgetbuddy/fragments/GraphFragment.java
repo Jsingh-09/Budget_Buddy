@@ -26,6 +26,7 @@ import com.parse.ParseQuery;
 import com.parse.ParseUser;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import edu.csustan.budgetbuddy.Expense;
@@ -53,6 +54,12 @@ public class GraphFragment extends Fragment {
         query.include(Expense.KEY_AMOUNT);                                                                  //query parameter that includes Expense amount
         final List<DataEntry> data = new ArrayList<>();                                                     //initiates a DataEntry List that will be used to populate chart
 
+        final ArrayList<Double> groceries = new ArrayList<>();
+        final ArrayList<Double> fastFood = new ArrayList<>();
+        final ArrayList<Double> clothing = new ArrayList<>();
+        final ArrayList<Double> entertainment = new ArrayList<>();
+        final ArrayList<Double> miscellaneous = new ArrayList<>();
+
         query.findInBackground(new FindCallback<Expense>() {                                                //Finds all query matching the given parameters in database
             @Override
             public void done(List<Expense> dataList, ParseException e) {
@@ -61,11 +68,34 @@ public class GraphFragment extends Fragment {
                 }
                 for(Expense objects : dataList){                                                            //advanced for loop that iterates through the entries in the database
                     Log.i(TAG, "Type: " + objects.getItemType() + " Amount: " + objects.getCost());   //Log used for debugging
+                    
+                    if(objects.getItemType().equals("Groceries")) {
+                        groceries.add(objects.getCost());
+                    }else if(objects.getItemType().equals("Fast Food")) {
+                        fastFood.add(objects.getCost());
+                    }else if(objects.getItemType().equals("Clothing")) {
+                        clothing.add(objects.getCost());
+                    }else if (objects.getItemType().equals("Entertainment")) {
+                        entertainment.add(objects.getCost());
+                    }else if(objects.getItemType().equals("Miscellaneous")) {
+                        miscellaneous.add(objects.getCost());
+                    }
 
-                    //Todo: add formatting to queried data before adding to List(by type).
+                    Log.i(TAG, "groceries: " + groceries.toString());
+                    Log.i(TAG, "fast food: " + fastFood.toString());
+                    Log.i(TAG, "clothing: " + clothing.toString());
+                    Log.i(TAG, "entertainment: " + entertainment.toString());
+                    Log.i(TAG, "miscellaneous: " + miscellaneous.toString());
 
-                    data.add(new ValueDataEntry(objects.getItemType(), objects.getCost()));                 //adds Expense type and amount as a new DataEntry into the List data
+                    //data.add(new ValueDataEntry(objects.getItemType(), objects.getCost()));                 //adds Expense type and amount as a new DataEntry into the List data
                 }
+                
+                data.add(new ValueDataEntry("Total Groceries", addCosts(groceries)));
+                data.add(new ValueDataEntry("Total Fast Food", addCosts(fastFood)));
+                data.add(new ValueDataEntry("Total Clothing", addCosts(clothing)));
+                data.add(new ValueDataEntry("Total Entertainment", addCosts(entertainment)));
+                data.add(new ValueDataEntry("Total Miscellaneous", addCosts(miscellaneous)));
+
                 Pie pie = AnyChart.pie();                                                                   //initiates a new chart that is a Pie chart
                 pie.data(data);                                                                             //feeds the API the List data to populate the Pie chart
 
@@ -77,5 +107,14 @@ public class GraphFragment extends Fragment {
             }
         });
         return chartView;
+    }
+
+    public double addCosts(ArrayList<Double> costs){
+        double totalCost = 0;
+        for(int i = 0; i < costs.size(); i++){
+            totalCost = totalCost+costs.get(i);
+            Log.i(TAG, "total: " + totalCost);
+        }
+        return totalCost;
     }
 }

@@ -18,6 +18,7 @@ public class AppParse extends Application {
         super.onCreate();
         // Register your parse models - Stephanie
         ParseObject.registerSubclass(Expense.class);
+        ParseObject.registerSubclass(Saving.class);
 
         Parse.initialize(new Parse.Configuration.Builder(this)
                 .applicationId("mYr260IWiwsxSA2qdiXMA3wQ3Ux8n3AICL7vXDuV")

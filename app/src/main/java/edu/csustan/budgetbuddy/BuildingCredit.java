@@ -3,11 +3,11 @@ package edu.csustan.budgetbuddy;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.SearchView;
@@ -27,16 +27,16 @@ public class BuildingCredit extends AppCompatActivity {
 
         rcv = (RecyclerView) findViewById(R.id.recview);
 
-        adapter = new CreditAdapter(dataqueue(),getApplicationContext());
+        adapter = new CreditAdapter(dataqueue(), getApplicationContext());
         rcv.setAdapter(adapter);
 
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(this,1);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(this, 1);
         rcv.setLayoutManager(gridLayoutManager);
     }
 
     public ArrayList<CreditModel> dataqueue() {
 
-        ArrayList<CreditModel> holder= new ArrayList<>();
+        ArrayList<CreditModel> holder = new ArrayList<>();
 
         CreditModel ob1 = new CreditModel();
         ob1.setHeader("Introduction to Credit");
@@ -110,11 +110,14 @@ public class BuildingCredit extends AppCompatActivity {
         return holder;
     }
 
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu)
     {
         getMenuInflater().inflate(R.menu.credit_menu, menu);
         MenuItem item = menu.findItem(R.id.search_menu);
+
+
 
         SearchView searchView = (SearchView)item.getActionView();
 
