@@ -12,62 +12,76 @@
 
     <!-- Stephanie's Code -->
 <!-- setting up the layout for one single expense - Stephanie -->
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="62dp"
         android:padding="10dp">
 
         <TextView
             android:id="@+id/tvitemLocationPlace"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="0dp"
-            android:layout_marginRight="0dp"
-            android:layout_weight="0"
             android:text="Location:"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvItemLocation" />
 
         <TextView
             android:id="@+id/tvItemLocation"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="0dp"
-            android:layout_marginEnd="10dp"
-            android:layout_marginRight="10dp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvItemTypePlace"
+            app:layout_constraintStart_toEndOf="@+id/tvitemLocationPlace"
+            app:layout_constraintTop_toTopOf="@+id/tvItemTypePlace"
             tools:text="Walmart" />
 
         <TextView
             android:id="@+id/tvItemTypePlace"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="0"
+            android:layout_marginStart="30dp"
             android:text="Type:"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/tvItemLocation"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tvItemType"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="5dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="0dp"
-            android:layout_marginEnd="0dp"
-            android:layout_marginRight="0dp"
-            tools:text="Food" />
+            app:layout_constraintBottom_toBottomOf="@+id/tvItemTypePlace"
+            app:layout_constraintStart_toEndOf="@+id/tvItemTypePlace"
+            tools:text="Fast Food" />
 
         <TextView
             android:id="@+id/tvItemAmount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="0dp"
-            android:layout_marginEnd="0dp"
-            android:layout_marginRight="0dp"
+            android:layout_marginStart="30dp"
             android:drawableStart="@drawable/ic_money"
+            app:layout_constraintStart_toEndOf="@+id/tvItemType"
+            app:layout_constraintTop_toTopOf="@+id/tvItemType"
             tools:text="100" />
 
-    </LinearLayout>
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Date:"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tvitemLocationPlace"
+            app:layout_constraintTop_toBottomOf="@+id/tvitemLocationPlace" />
+
+        <TextView
+            android:id="@+id/tvDatePlaced"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="12/3/202 10:20"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tvDate"
+            app:layout_constraintTop_toTopOf="@+id/tvDate" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

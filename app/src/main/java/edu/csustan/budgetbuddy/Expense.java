@@ -4,6 +4,10 @@ import com.parse.ParseClassName;
 import com.parse.ParseObject;
 import com.parse.ParseUser;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 //Stephanie's code
 //This class represents the database class "Expenses" and its objects
 @ParseClassName("Expenses")
@@ -59,6 +63,17 @@ public class Expense extends ParseObject {
     public String getObject() {
         return getString(KEY_Object);
     }
+
+    public Date getCreatedAt(){
+        return getDate(KEY_CREATED);
+    }
+    public String getDatePlaced(){
+        Date date = getCreatedAt();
+        DateFormat df = new SimpleDateFormat("dd-MM-yyyy");
+        String datePlaced = df.format(date);
+        return datePlaced;
+    }
+
 
 
 }

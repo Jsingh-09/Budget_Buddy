@@ -11,6 +11,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.parse.ParseObject;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 //Stephanie's Code
@@ -74,12 +77,14 @@ public class ExpensesAdapter extends RecyclerView.Adapter<ExpensesAdapter.ViewHo
     private TextView tvItemLocation;
     private TextView tvItemType;
     private TextView tvItemAmount;
+    private TextView tvDatePlaced;
 
     public ViewHolder(@NonNull View itemView) {
         super(itemView);
         tvItemLocation = itemView.findViewById(R.id.tvItemLocation);
         tvItemType = itemView.findViewById(R.id.tvItemType);
         tvItemAmount = itemView.findViewById(R.id.tvItemAmount);
+        tvDatePlaced = itemView.findViewById(R.id.tvDatePlaced);
 
 
 
@@ -90,6 +95,9 @@ public class ExpensesAdapter extends RecyclerView.Adapter<ExpensesAdapter.ViewHo
         tvItemLocation.setText(expense.getLocation());
         tvItemType.setText(expense.getItemType());
         tvItemAmount.setText(expense.getAmount());
+
+
+       // tvDatePlaced.setText(expense.getDatePlaced());
        // tvUsername.setText(expense.getUser().getUsername());
 
         itemView.setOnClickListener(new View.OnClickListener() {

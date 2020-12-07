@@ -58,7 +58,7 @@ public class ProfileActivity extends AppCompatActivity {
         saving_goal_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intentLoadNewActivity = new Intent(ProfileActivity.this, Saving.class);
+                Intent intentLoadNewActivity = new Intent(ProfileActivity.this, SavingGoalActivity.class);
                 startActivity(intentLoadNewActivity);
             }
         });

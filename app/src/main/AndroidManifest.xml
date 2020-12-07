@@ -2,9 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="edu.csustan.budgetbuddy">
 
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
     <application
         android:name=".AppParse"
         android:allowBackup="true"
@@ -14,7 +11,8 @@
         android:supportsRtl="true"
         android:theme="@style/MyMaterialTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".BuildingCredit2"></activity>
+        <activity android:name=".SavingGoalActivity"></activity>
+        <activity android:name=".BuildingCredit2" />
         <activity android:name=".BuildingCredit" />
         <activity android:name=".Track_Expenses" />
         <activity android:name=".LoginActivity">
@@ -30,5 +28,8 @@
         <activity android:name=".SignupActivity" />
         <activity android:name=".Budget_Calculator" />
     </application>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

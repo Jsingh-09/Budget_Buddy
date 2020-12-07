@@ -154,7 +154,7 @@ public class ListItemsFragment extends Fragment {
                     Log.e(TAG, "Issue with expense", e);
                 }
                 for (Expense expense : expenses) {
-                    Log.i(TAG, "Expense:" + expense.getAmount() + ", Location" + expense.getLocation() + ", Item" + expense.getItemType());
+                    Log.i(TAG, "Expense:" + expense.getAmount() + ", Location" + expense.getLocation() + ", Item" + expense.getItemType() +", Created" + expense.getCreatedAt());
                 }
                 allExpenses.addAll(expenses);
                 adapter.notifyDataSetChanged();
