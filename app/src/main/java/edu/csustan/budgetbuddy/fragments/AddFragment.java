@@ -21,6 +21,8 @@ import com.parse.ParseException;
 import com.parse.ParseUser;
 import com.parse.SaveCallback;
 
+import java.text.DecimalFormat;
+
 import edu.csustan.budgetbuddy.Expense;
 import edu.csustan.budgetbuddy.R;
 
@@ -72,11 +74,24 @@ public class AddFragment extends Fragment implements AdapterView.OnItemSelectedL
                 String amount = etAmount.getText().toString();
                // String itemType = etType.getText().toString();
                 String location = etLocation.getText().toString();
+                // next line checks for empty fields
                 if (location.isEmpty() || amount.isEmpty() || type.isEmpty()) {
                     Toast.makeText(getContext(), "Fields cannot be Empty", Toast.LENGTH_LONG).show();
-
                     return;
                 }
+                // next line checks for too many decimal points in text input (invalid input)
+                else if (notSingleDecimal(amount)) {
+                    Toast.makeText(getContext(), "Too many decimals", Toast.LENGTH_LONG).show();
+                    return;
+                }
+                // next line also checks for empty fields
+                else if(amount.equals(".")) {
+                    Toast.makeText(getContext(), "Invalid input",Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                amount = formatDecimalCurrency(amount).toString();
+
                  ParseUser currentUser = ParseUser.getCurrentUser();
 
                 saveExpense(location, currentUser, amount, type);
@@ -108,6 +123,24 @@ public class AddFragment extends Fragment implements AdapterView.OnItemSelectedL
 
             }
         });
+    }
+
+    // this function checks for multiple decimals in the input (checks for invalid input)
+    private static boolean notSingleDecimal(String number) {
+        int decimal = 0;
+        for (int i = 0; i < number.length(); i++) {
+            if (number.charAt(i) == '.') {
+                decimal += 1;
+            }
+        }
+        return (decimal > 1);
+    }
+
+    // the code for the currency conversion comes from https://www.youtube.com/watch?v=-I_h1vEmEs4
+    // this function formats the input so that it has exactly two numbers past the decimal
+    private static String formatDecimalCurrency(String number) {
+        DecimalFormat formatter = new DecimalFormat("###########0.00");
+        return formatter.format(Double.parseDouble(number));
     }
 
     @Override
