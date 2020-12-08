@@ -97,7 +97,8 @@ public class ExpensesAdapter extends RecyclerView.Adapter<ExpensesAdapter.ViewHo
         tvItemAmount.setText(expense.getAmount());
 
 
-       // tvDatePlaced.setText(expense.getDatePlaced());
+
+       tvDatePlaced.setText(expense.getDate());
        // tvUsername.setText(expense.getUser().getUsername());
 
         itemView.setOnClickListener(new View.OnClickListener() {
@@ -127,7 +128,9 @@ public class ExpensesAdapter extends RecyclerView.Adapter<ExpensesAdapter.ViewHo
 
 
     }
-}
+
+
+    }
 
 
 

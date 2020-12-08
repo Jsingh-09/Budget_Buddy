@@ -20,6 +20,7 @@ public class Expense extends ParseObject {
     public static final String KEY_USER = "user";
     public static final String KEY_CREATED = "createdAt";
     public static final String KEY_Object = "objectId";
+    public static final String KEY_Date = "date";
 
 
     //define getter and setters
@@ -67,11 +68,15 @@ public class Expense extends ParseObject {
     public Date getCreatedAt(){
         return getDate(KEY_CREATED);
     }
-    public String getDatePlaced(){
-        Date date = getCreatedAt();
-        DateFormat df = new SimpleDateFormat("dd-MM-yyyy");
-        String datePlaced = df.format(date);
-        return datePlaced;
+
+    public String getDate() {
+        return getString(KEY_Date);
+
+    }
+
+    public void setDate(String date) {
+        put(KEY_Date, date);
+
     }
 
 
