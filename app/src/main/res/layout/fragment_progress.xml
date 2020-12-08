@@ -3,12 +3,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.ProgressFragment">
+    android:background="#2196F3"
+    tools:context=".fragments.ListItemsFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <!-- Stephanie's Code -->
+    <!-- Recycler view for displaying expenses -->
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:orientation="vertical">
+        <!-- <include
+             layout="@layout/toolbar_layout"></include> -->
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvGoals"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
 
 </FrameLayout>

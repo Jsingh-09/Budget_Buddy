@@ -39,7 +39,14 @@ public class Saving extends ParseObject {
     public ParseUser getUser() {
         return getParseUser(KEY_USER);
     }
+
+    public static String getKeyCreated() {
+        return KEY_CREATED;
+    }
+
     public void setUser(ParseUser user) {
         put(KEY_USER, user);
+
+
     }
 }
