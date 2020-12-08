@@ -42,7 +42,6 @@ public class AddFragment extends Fragment implements AdapterView.OnItemSelectedL
     private Spinner sTypes;
     private EditText etLocation;
     private EditText etAmount;
-   // private EditText etType;
     private Button btnAdd;
     private TextView mDisplayDate;
     private DatePickerDialog.OnDateSetListener mDateSetListener;
@@ -64,38 +63,33 @@ public class AddFragment extends Fragment implements AdapterView.OnItemSelectedL
         // Setup any handles to view objects here
 
         mDisplayDate = view.findViewById(R.id.tvChooseDate);
-
-
-
-
         etLocation = view.findViewById(R.id.etLocation);
         etAmount = view.findViewById(R.id.etAmount);
         btnAdd = view.findViewById(R.id.btnAddNew);
-       // etType = view.findViewById(R.id.etType);
         sTypes = view.findViewById(R.id.sTypes);
 
-       sTypes = view.findViewById(R.id.sTypes);
-
-       ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getContext(), R.array.itemType, android.R.layout.simple_spinner_item);
+        //this belongs to the spinner
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getContext(), R.array.itemType, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         sTypes.setAdapter(adapter);
 
         sTypes.setOnItemSelectedListener(this);
 
+        //this belongs to the date
         mDisplayDate.setOnClickListener(new View.OnClickListener() {
-                                            @Override
-                                            public void onClick(View view) {
-                                                Calendar cal = Calendar.getInstance();
-                                                int year = cal.get(Calendar.YEAR);
-                                                int month = cal.get(Calendar.MONTH);
-                                                int day = cal.get(Calendar.DAY_OF_MONTH);
+            @Override
+            public void onClick(View view) {
+                Calendar cal = Calendar.getInstance();
+                int year = cal.get(Calendar.YEAR);
+                int month = cal.get(Calendar.MONTH);
+                int day = cal.get(Calendar.DAY_OF_MONTH);
 
-                                                DatePickerDialog dialog = new DatePickerDialog(getContext(), android.R.style.Theme_Holo_Dialog_MinWidth, mDateSetListener, year, month, day);
+                DatePickerDialog dialog = new DatePickerDialog(getContext(), android.R.style.Theme_Holo_Dialog_MinWidth, mDateSetListener, year, month, day);
 
-                                                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-                                                dialog.show();
-                                            }
-                                        });
+                dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+                dialog.show();
+            }
+        });
         mDateSetListener = new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker datePicker, int year, int month, int day) {
@@ -105,7 +99,8 @@ public class AddFragment extends Fragment implements AdapterView.OnItemSelectedL
             }
         };
 
-                btnAdd.setOnClickListener(new View.OnClickListener() {
+        //button
+        btnAdd.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         String date = mDisplayDate.getText().toString();
@@ -126,7 +121,7 @@ public class AddFragment extends Fragment implements AdapterView.OnItemSelectedL
                 });
     }
 
-    //
+    //saves items from add to the database
     private void saveExpense(String location, ParseUser currentUser, String amount, String type, String date) {
         Expense expense = new Expense();
         expense.setLocation(location);
@@ -152,6 +147,7 @@ public class AddFragment extends Fragment implements AdapterView.OnItemSelectedL
         });
     }
 
+    //this belongs to the spinner
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
       // String text = adapterView.getItemAtPosition(i).toString();
