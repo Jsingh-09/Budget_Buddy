@@ -4,7 +4,7 @@ import com.parse.ParseClassName;
 import com.parse.ParseObject;
 import com.parse.ParseUser;
 
-@ParseClassName("Savings")
+@ParseClassName("Saving")
 public class Saving extends ParseObject {
 
     public static final String KEY_GOAL ="goal";
@@ -12,6 +12,8 @@ public class Saving extends ParseObject {
     public static final String KEY_AMOUNTSAVED = "amountSaved";
     public static final String KEY_USER = "user";
     public static final String KEY_CREATED = "createdAt";
+    public static final String KEY_DESCRIPTION = "description";
+    public static final String KEY_CATEGORY = "category";
 
 
     //define getter and setters
@@ -49,4 +51,22 @@ public class Saving extends ParseObject {
 
 
     }
+
+    public String getDescription()
+    {
+        return getString(KEY_DESCRIPTION);
+    }
+
+    public void setDescription(String Description) {
+        put(KEY_DESCRIPTION, Description);
+    }
+
+    public String getCategory() {
+        return getString(KEY_CATEGORY);
+    }
+    public void setCategory(String Category){
+        put(KEY_CATEGORY, Category);
+
+    }
+
 }

@@ -54,6 +54,7 @@ public class SavingGoalActivity extends AppCompatActivity {
                         return true;
                     }
                 });
+        bottomNavigationView.setSelectedItemId(R.id.action_add_goal);
 
 
     }
