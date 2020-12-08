@@ -35,7 +35,6 @@ public class SavingGoalActivity extends AppCompatActivity {
                         Fragment fragment;
                         switch (menuItem.getItemId()) {
                             case R.id.action_progress:
-                                Toast.makeText(SavingGoalActivity.this, "progress", Toast.LENGTH_LONG).show();
                                 fragment = new ProgressFragment();
                                 // fragment = fragment1;
                                 break;
