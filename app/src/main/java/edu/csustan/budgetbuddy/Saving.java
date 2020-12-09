@@ -14,7 +14,7 @@ public class Saving extends ParseObject {
     public static final String KEY_CREATED = "createdAt";
     public static final String KEY_DESCRIPTION = "description";
     public static final String KEY_CATEGORY = "category";
-
+    public static final String KEY_ID = "objectID";
 
     //define getter and setters
     public String getGoal() {
@@ -48,8 +48,6 @@ public class Saving extends ParseObject {
 
     public void setUser(ParseUser user) {
         put(KEY_USER, user);
-
-
     }
 
     public String getDescription()
@@ -68,5 +66,4 @@ public class Saving extends ParseObject {
         put(KEY_CATEGORY, Category);
 
     }
-
 }
