@@ -49,24 +49,24 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:background="@drawable/edittext_background"
-        android:hint="New computer"
+        android:hint=" New computer"
         android:inputType="text"
         android:padding="5dp"
         android:paddingLeft="8dp"
         android:paddingRight="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvSavingGoal" />
+        app:layout_constraintTop_toBottomOf="@id/tvSavingGoal" />
 
     <EditText
-        android:id="@+id/etSavingGoalCategory"
+        android:id="@+id/etSavingGoalDescription"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:background="@drawable/edittext_background"
-        android:hint="Saving up for school laptop"
+        android:hint=" Saving up for school laptop"
         android:inputType="text"
         android:padding="5dp"
         android:paddingLeft="8dp"
@@ -170,7 +170,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etSavingGoalCategory" />
+        app:layout_constraintTop_toBottomOf="@+id/etSavingGoalDescription" />
 
     <TextView
         android:id="@+id/tvSavingGoalAmount"
@@ -187,10 +187,10 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinnerSavingGoalCategory" />
+        app:layout_constraintTop_toBottomOf="@+id/spinnerGoal" />
 
     <Spinner
-        android:id="@+id/spinnerSavingGoalCategory"
+        android:id="@+id/spinnerGoal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"

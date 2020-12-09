@@ -101,7 +101,10 @@
         android:layout_marginRight="5dp"
         android:background="@drawable/edittext_background"
         android:drawableStart="@drawable/ic_money"
-        android:inputType="number"
+        android:digits="1234567890."
+        android:maxLength="12"
+        android:ems="10"
+        android:inputType="numberDecimal"
         android:padding="5dp"
         android:paddingLeft="8dp"
         android:paddingRight="8dp" />
