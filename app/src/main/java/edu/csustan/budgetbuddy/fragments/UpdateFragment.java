@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.text.Editable;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -68,9 +69,9 @@ public class UpdateFragment extends Fragment {
         btUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final Saving saving = new Saving();
                 String update = spinnerUpdate.getSelectedItem().toString();
-                final String newAmount = etUpdate.getText().toString();
+                final String updateAmount = etUpdate.getText().toString();
+                final Double addAmount = Double.parseDouble(updateAmount);
 
                 ParseQuery<ParseObject> query = ParseQuery.getQuery("Saving");
                 query.whereEqualTo("user", ParseUser.getCurrentUser());
@@ -79,7 +80,10 @@ public class UpdateFragment extends Fragment {
                     @Override
                     public void done(ParseObject object, ParseException e) {
                         if(e == null){
-                            object.put("amountSaved", newAmount);
+                            String currentAmount = object.getString("amountSaved");
+                            Double newAmount = Double.parseDouble(currentAmount);
+                            Double dataAmount = newAmount + addAmount;
+                            object.put("amountSaved", dataAmount.toString());
                             object.saveInBackground();
                             Toast.makeText(getContext(), "Update saved", Toast.LENGTH_SHORT).show();
                         }else{
