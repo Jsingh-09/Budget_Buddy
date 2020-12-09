@@ -26,9 +26,6 @@ import com.parse.ParseUser;
 import java.util.ArrayList;
 import java.util.List;
 
-import edu.csustan.budgetbuddy.Expense;
-
-import edu.csustan.budgetbuddy.ExpensesAdapter;
 import edu.csustan.budgetbuddy.GoalsAdapter;
 import edu.csustan.budgetbuddy.R;
 import edu.csustan.budgetbuddy.Saving;
@@ -73,18 +70,17 @@ public class ProgressFragment extends Fragment {
         queryGoals();
 
 
-       
+
 
         adapter.setOnItemClickListener(new GoalsAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(int position) {
-                // Toast.makeText(getContext(), "item", Toast.LENGTH_SHORT).show();
-                // allExpenses.get(position);
+
             }
 
             @Override
             public void onItemLongClicked(int position) {
-                // adapter.deleteItem(position);
+
 
 
             }
@@ -98,19 +94,19 @@ public class ProgressFragment extends Fragment {
         private void queryGoals() {
             ParseQuery<Saving> query = ParseQuery.getQuery(Saving.class);
             query.include(Saving.KEY_USER);
-            query.whereEqualTo(Saving.KEY_USER, ParseUser.getCurrentUser()); //pulls only the data  of the user who is signed in
-            query.addDescendingOrder(Saving.KEY_CREATED); //places most recent expense at the top
+            query.whereEqualTo(Saving.KEY_USER, ParseUser.getCurrentUser());
+            query.addDescendingOrder(Saving.KEY_CREATED);
             query.findInBackground(new FindCallback<Saving>() {
 
                 @Override
-                public void done(List<Saving> allGoals, ParseException e) {
+                public void done(List<Saving> savings, ParseException e) {
                     if (e != null) {
                         Log.e(TAG, "Issue with goal", e);
                     }
-                    for (Saving saving : allGoals) {
+                    for (Saving saving : savings) {
                         Log.i(TAG, "Saving:" + saving.getGoal() + ", GoalAmount" + saving.getGoalAmount() + ", AmountSaved" + saving.getAmountSaved() + ", Created" + saving.getCreatedAt() + ", Description" + saving.getDescription() + "Category" + saving.getCategory());
                     }
-                    allGoals.addAll(allGoals);
+                    allGoals.addAll(savings);
                     adapter.notifyDataSetChanged();
 
                 }
