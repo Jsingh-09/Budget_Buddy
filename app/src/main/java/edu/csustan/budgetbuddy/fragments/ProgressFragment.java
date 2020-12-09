@@ -26,9 +26,11 @@ import com.parse.ParseUser;
 import java.util.ArrayList;
 import java.util.List;
 
+import edu.csustan.budgetbuddy.ExpensesAdapter;
 import edu.csustan.budgetbuddy.GoalsAdapter;
 import edu.csustan.budgetbuddy.R;
 import edu.csustan.budgetbuddy.Saving;
+import it.xabaras.android.recyclerview.swipedecorator.RecyclerViewSwipeDecorator;
 
 // work on this one - list of goals
 public class ProgressFragment extends Fragment {
@@ -70,7 +72,8 @@ public class ProgressFragment extends Fragment {
         queryGoals();
 
 
-
+        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(simpleCallback);
+        itemTouchHelper.attachToRecyclerView(rvGoals);
 
         adapter.setOnItemClickListener(new GoalsAdapter.OnItemClickListener() {
             @Override
@@ -82,12 +85,37 @@ public class ProgressFragment extends Fragment {
             public void onItemLongClicked(int position) {
 
 
-
             }
         });
 
-    }
 
+    }
+        ItemTouchHelper.SimpleCallback simpleCallback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.RIGHT) {
+            @Override
+            public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+                return false;
+            }
+
+            @Override
+            public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+                adapter.deleteItem(viewHolder.getAdapterPosition());
+
+                allGoals.remove(viewHolder.getAdapterPosition());
+                adapter.notifyItemRemoved(viewHolder.getAdapterPosition());
+                Toast.makeText(getContext(), "item deleted", Toast.LENGTH_SHORT).show();
+
+            }
+
+            @Override
+            public void onChildDraw(@NonNull Canvas c, @NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, float dX, float dY, int actionState, boolean isCurrentlyActive) {
+                new RecyclerViewSwipeDecorator.Builder(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive)
+                        .addSwipeRightBackgroundColor(ContextCompat.getColor(getContext(), R.color.colorAccent))
+                        .addSwipeRightActionIcon(R.drawable.ic_baseline_delete_forever_24_white)
+                        .create()
+                        .decorate();
+                super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive);
+            }
+        };
 
 
         //create the data source
@@ -113,6 +141,8 @@ public class ProgressFragment extends Fragment {
             });
         }
     }
+
+
 
 
 
