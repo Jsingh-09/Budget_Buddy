@@ -30,7 +30,7 @@
             android:id="@+id/tvGoalName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
+            android:layout_marginStart="4dp"
             android:layout_marginBottom="4dp"
             app:layout_constraintBottom_toBottomOf="@+id/tvGoalNameLabel"
             app:layout_constraintStart_toEndOf="@+id/tvGoalNameLabel"
@@ -52,7 +52,7 @@
             android:id="@+id/tvGoalCategory"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
+            android:layout_marginStart="4dp"
             app:layout_constraintBottom_toBottomOf="@+id/tvGoalCategoryLabel"
             app:layout_constraintStart_toEndOf="@+id/tvGoalCategoryLabel"
             tools:text="Goal #1" />
@@ -67,13 +67,13 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@+id/tvGoalNameLabel"
             app:layout_constraintTop_toBottomOf="@+id/tvGoalNameLabel"
-            app:layout_constraintVertical_bias="0.245" />
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/tvGoalDescription"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
+            android:layout_marginStart="8dp"
             android:text="Saving up for a brand new Tesla Model X"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/tvGoalDescriptionLabel"
@@ -84,12 +84,13 @@
             android:id="@+id/tvGoalSavedLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
             android:text="Amount already saved:"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@+id/tvGoalDescriptionLabel"
-            app:layout_constraintTop_toBottomOf="@+id/tvGoalDescriptionLabel" />
+            app:layout_constraintTop_toBottomOf="@+id/tvGoalDescriptionLabel"
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/tvGoalSaved"
@@ -117,7 +118,7 @@
             android:id="@+id/tvGoalAmount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
+            android:layout_marginStart="4dp"
             android:drawableStart="@drawable/ic_money"
             app:layout_constraintBottom_toBottomOf="@+id/tvGoalAmountLabel"
             app:layout_constraintStart_toEndOf="@+id/tvGoalAmountLabel"
