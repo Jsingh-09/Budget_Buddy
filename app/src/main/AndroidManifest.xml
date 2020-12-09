@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="edu.csustan.budgetbuddy">
 
     <application
@@ -15,7 +16,8 @@
         <activity android:name=".BuildingCredit2" />
         <activity android:name=".BuildingCredit" />
         <activity android:name=".Track_Expenses" />
-        <activity android:name=".LoginActivity">
+        <activity android:name=".LoginActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.SEARCH" />
@@ -23,9 +25,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ResetPasswordActivity" />
-        <activity android:name=".ProfileActivity" />
-        <activity android:name=".SignupActivity" />
+        <activity android:name=".ResetPasswordActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        </activity>
+
+        <activity android:name=".ProfileActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        </activity>
+
+        <activity android:name=".SignupActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        </activity>
         <activity android:name=".Budget_Calculator" />
     </application>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
