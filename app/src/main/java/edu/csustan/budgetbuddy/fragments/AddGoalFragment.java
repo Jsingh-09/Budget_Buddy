@@ -21,6 +21,8 @@ import com.parse.ParseException;
 import com.parse.ParseUser;
 import com.parse.SaveCallback;
 
+import java.text.DecimalFormat;
+
 import edu.csustan.budgetbuddy.Expense;
 import edu.csustan.budgetbuddy.R;
 import edu.csustan.budgetbuddy.Saving;
@@ -122,6 +124,24 @@ public class AddGoalFragment extends Fragment implements AdapterView.OnItemSelec
 
             }
         });
+    }
+
+    // this function checks for multiple decimals in the input (checks for invalid input)
+    private static boolean notSingleDecimal(String number) {
+        int decimal = 0;
+        for (int i = 0; i < number.length(); i++) {
+            if (number.charAt(i) == '.') {
+                decimal += 1;
+            }
+        }
+        return (decimal > 1);
+    }
+
+    // the code for the currency conversion comes from https://www.youtube.com/watch?v=-I_h1vEmEs4
+    // this function formats the input so that it has exactly two numbers past the decimal
+    private static String formatDecimalCurrency(String number) {
+        DecimalFormat formatter = new DecimalFormat("###########0.00");
+        return formatter.format(Double.parseDouble(number));
     }
 
 
