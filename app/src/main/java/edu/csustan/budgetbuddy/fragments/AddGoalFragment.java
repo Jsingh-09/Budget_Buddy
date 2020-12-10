@@ -88,6 +88,18 @@ public class AddGoalFragment extends Fragment implements AdapterView.OnItemSelec
 
                     return;
                 }
+                // next line checks for too many decimal points in text input (invalid input)
+                else if (notSingleDecimal(amount) || notSingleDecimal(amountSaved)) {
+                    Toast.makeText(getContext(), "Too many decimals", Toast.LENGTH_LONG).show();
+                    return;
+                }
+                // next line also checks for empty fields
+                else if(amount.equals(".") || amountSaved.equals(".")) {
+                    Toast.makeText(getContext(), "Invalid input",Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                amount = formatDecimalCurrency(amount).toString();
                 ParseUser currentUser = ParseUser.getCurrentUser();
 
                 saveExpense(Goal, currentUser, amount, type, amountSaved, itemDes);
