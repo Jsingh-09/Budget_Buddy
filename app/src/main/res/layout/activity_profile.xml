@@ -94,7 +94,7 @@
             android:layout_marginTop="660dp"
             android:background="@drawable/button_background"
             android:onClick="login"
-            android:text="Logout"
+            android:text="Sign out"
             android:layout_centerHorizontal="true"
             android:textColor="@color/colorWhite"
             android:textStyle="bold" />
