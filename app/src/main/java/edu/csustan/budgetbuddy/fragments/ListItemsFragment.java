@@ -38,6 +38,7 @@ import edu.csustan.budgetbuddy.ExpensesAdapter;
 import edu.csustan.budgetbuddy.R;
 import it.xabaras.android.recyclerview.swipedecorator.RecyclerViewSwipeDecorator;
 
+
 //Stephanie's Code
 //this fragment covers the expense list
 public class ListItemsFragment extends Fragment {

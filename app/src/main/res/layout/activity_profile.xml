@@ -99,7 +99,7 @@
             android:textColor="@color/colorWhite"
             android:textStyle="bold" />
 
-        <EditText
+        <TextView
             android:id="@+id/saving_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -111,10 +111,11 @@
             android:inputType="textPersonName"
             android:background="@null"
             android:text="Saving Goals"
+            android:textColor="#000000"
             android:textSize="14sp"
             android:textStyle="normal|bold|italic" />
 
-        <EditText
+        <TextView
             android:id="@+id/calculator_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -125,10 +126,11 @@
             android:inputType="textPersonName"
             android:text="Budget Calculator"
             android:background="@null"
+            android:textColor="#000000"
             android:textSize="14sp"
             android:textStyle="normal|bold|italic" />
 
-        <EditText
+        <TextView
             android:id="@+id/expense_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -139,10 +141,11 @@
             android:inputType="textPersonName"
             android:text="Track my Expense"
             android:background="@null"
+            android:textColor="#000000"
             android:textSize="14sp"
             android:textStyle="normal|bold|italic" />
 
-        <EditText
+        <TextView
             android:id="@+id/credit_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -154,6 +157,7 @@
             android:singleLine="false"
             android:text="Building Credit"
             android:background="@null"
+            android:textColor="#000000"
             android:textSize="14sp"
             android:textStyle="normal|bold|italic" />
 

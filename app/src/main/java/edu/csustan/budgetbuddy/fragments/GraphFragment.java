@@ -68,7 +68,7 @@ public class GraphFragment extends Fragment {
                 }
                 for(Expense objects : dataList){                                                            //advanced for loop that iterates through the entries in the database
                     Log.i(TAG, "Type: " + objects.getItemType() + " Amount: " + objects.getCost());   //Log used for debugging
-                    
+
                     if(objects.getItemType().equals("Groceries")) {
                         groceries.add(objects.getCost());
                     }else if(objects.getItemType().equals("Fast Food")) {
