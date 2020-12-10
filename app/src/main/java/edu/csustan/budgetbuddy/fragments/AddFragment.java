@@ -80,29 +80,6 @@ public class AddFragment extends Fragment implements AdapterView.OnItemSelectedL
         mDisplayDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String type = sTypes.getSelectedItem().toString();
-                String amount = etAmount.getText().toString();
-               // String itemType = etType.getText().toString();
-                String location = etLocation.getText().toString();
-                // next line checks for empty fields
-                if (location.isEmpty() || amount.isEmpty() || type.isEmpty()) {
-                    Toast.makeText(getContext(), "Fields cannot be Empty", Toast.LENGTH_LONG).show();
-                    return;
-                }
-                // next line checks for too many decimal points in text input (invalid input)
-                else if (notSingleDecimal(amount)) {
-                    Toast.makeText(getContext(), "Too many decimals", Toast.LENGTH_LONG).show();
-                    return;
-                }
-                // next line also checks for empty fields
-                else if(amount.equals(".")) {
-                    Toast.makeText(getContext(), "Invalid input",Toast.LENGTH_SHORT).show();
-                    return;
-                }
-
-                amount = formatDecimalCurrency(amount).toString();
-
-                 ParseUser currentUser = ParseUser.getCurrentUser();
                 Calendar cal = Calendar.getInstance();
                 int year = cal.get(Calendar.YEAR);
                 int month = cal.get(Calendar.MONTH);
@@ -128,6 +105,10 @@ public class AddFragment extends Fragment implements AdapterView.OnItemSelectedL
                     @Override
                     public void onClick(View view) {
                         String date = mDisplayDate.getText().toString();
+                        if (!date.contains("/")) {
+                            Calendar cal = Calendar.getInstance();
+                            date = Integer.toString(cal.get(Calendar.MONTH) + 1) + "/" + Integer.toString(cal.get(Calendar.DAY_OF_MONTH)) + "/" + Integer.toString(cal.get(Calendar.YEAR));
+                        }
                         String type = sTypes.getSelectedItem().toString();
                         String amount = etAmount.getText().toString();
                         // String itemType = etType.getText().toString();
@@ -137,6 +118,18 @@ public class AddFragment extends Fragment implements AdapterView.OnItemSelectedL
 
                             return;
                         }
+                        // next line checks for too many decimal points in text input (invalid input)
+                        else if (notSingleDecimal(amount)) {
+                            Toast.makeText(getContext(), "Too many decimals", Toast.LENGTH_LONG).show();
+                            return;
+                        }
+                        // next line also checks for empty fields
+                        else if(amount.equals(".")) {
+                            Toast.makeText(getContext(), "Invalid input",Toast.LENGTH_SHORT).show();
+                            return;
+                        }
+
+                        amount = formatDecimalCurrency(amount).toString();
                         ParseUser currentUser = ParseUser.getCurrentUser();
 
                         saveExpense(location, currentUser, amount, type, date);

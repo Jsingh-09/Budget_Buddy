@@ -122,7 +122,7 @@
         android:paddingLeft="8dp"
         android:paddingRight="8dp"
         android:text="Choose Date"
-        android:textSize="24sp"
+        android:textSize="18sp"
         android:textStyle="bold" />
 
     <Button
