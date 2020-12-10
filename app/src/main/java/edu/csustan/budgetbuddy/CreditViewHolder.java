@@ -8,6 +8,11 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+// written by: Natasha Garcia
+// tested by: Stephanie, Jashan, Chris, and Jorge
+// debugged by:  Natasha
+
+
 public class CreditViewHolder extends RecyclerView.ViewHolder {
 
     ImageView img;

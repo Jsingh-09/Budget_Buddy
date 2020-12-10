@@ -13,6 +13,10 @@ import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
+// written by: Natasha Garcia
+// tested by: Stephanie, Jashan, Chris, and Jorge
+// debugged by:  Natasha
+
 public class BuildingCredit2 extends AppCompatActivity {
 
     ImageView img;

@@ -14,6 +14,10 @@ import android.widget.SearchView;
 
 import java.util.ArrayList;
 
+// written by: Natasha
+// tested by: Stephanie, Jashan, Chris, and Jorge
+// debugged by:  Natasha
+
 public class BuildingCredit extends AppCompatActivity {
 
     RecyclerView rcv;

@@ -14,6 +14,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
+// written by: Natasha Garcia
+// tested by: Stephanie, Jashan, Chris, and Jorge
+// debugged by:  Natasha
+
 public class CreditAdapter extends RecyclerView.Adapter<CreditViewHolder> implements Filterable {
 
     ArrayList<CreditModel> data;
