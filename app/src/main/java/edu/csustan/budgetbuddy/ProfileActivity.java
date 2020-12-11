@@ -1,4 +1,6 @@
-// Jashandeep Singh
+// written by: Jashandeep Singh
+// tested by: Stephanie, Jashan, Chris, Jorge and natasha
+// debugged by: Jashandeep Singh
 package edu.csustan.budgetbuddy;
 
 import android.app.ProgressDialog;
@@ -24,7 +26,7 @@ public class ProfileActivity extends AppCompatActivity {
     ImageButton saving_goal_button;
     ImageButton tracking_expense_button;
 
-
+    // This function will have the image so that the user can click on it to navigate through the application
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +39,7 @@ public class ProfileActivity extends AppCompatActivity {
         }
         ParseUser currentUser = ParseUser.getCurrentUser();
 
+        // Activity connection with the image
         budget_calculator_button = (ImageButton) findViewById(R.id.budget_calculator);
         budget_calculator_button.setOnClickListener(new View.OnClickListener() {
             @Override
