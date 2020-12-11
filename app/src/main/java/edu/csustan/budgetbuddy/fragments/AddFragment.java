@@ -76,7 +76,7 @@ public class AddFragment extends Fragment implements AdapterView.OnItemSelectedL
 
         sTypes.setOnItemSelectedListener(this);
 
-        //this belongs to the date
+        //this belongs to the date and creates date box
         mDisplayDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -91,6 +91,7 @@ public class AddFragment extends Fragment implements AdapterView.OnItemSelectedL
                 dialog.show();
             }
         });
+        //date event listener
         mDateSetListener = new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker datePicker, int year, int month, int day) {

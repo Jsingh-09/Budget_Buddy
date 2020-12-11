@@ -92,7 +92,7 @@ public class ListItemsFragment extends Fragment {
 
 
 
-
+        //part of the swipe delete feature
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(simpleCallback);
         itemTouchHelper.attachToRecyclerView(rvExpenses);
 
@@ -123,6 +123,8 @@ public class ListItemsFragment extends Fragment {
 
         @Override
         public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+
+            //Delete from list and database
             adapter.deleteItem(viewHolder.getAdapterPosition());
 
             allExpenses.remove(viewHolder.getAdapterPosition());
