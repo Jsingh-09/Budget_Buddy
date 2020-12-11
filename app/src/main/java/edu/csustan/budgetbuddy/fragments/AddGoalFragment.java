@@ -88,6 +88,7 @@ public class AddGoalFragment extends Fragment implements AdapterView.OnItemSelec
 
                     return;
                 }
+                // the next two else ifs were developed by Chris
                 // next line checks for too many decimal points in text input (invalid input)
                 else if (notSingleDecimal(amount) || notSingleDecimal(amountSaved)) {
                     Toast.makeText(getContext(), "Too many decimals", Toast.LENGTH_LONG).show();
@@ -138,6 +139,7 @@ public class AddGoalFragment extends Fragment implements AdapterView.OnItemSelec
         });
     }
 
+    // Developed by Chris
     // this function checks for multiple decimals in the input (checks for invalid input)
     private static boolean notSingleDecimal(String number) {
         int decimal = 0;
@@ -149,6 +151,7 @@ public class AddGoalFragment extends Fragment implements AdapterView.OnItemSelec
         return (decimal > 1);
     }
 
+    // Developed by Chris
     // the code for the currency conversion comes from https://www.youtube.com/watch?v=-I_h1vEmEs4
     // this function formats the input so that it has exactly two numbers past the decimal
     private static String formatDecimalCurrency(String number) {

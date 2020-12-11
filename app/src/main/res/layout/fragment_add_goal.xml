@@ -8,6 +8,7 @@
     tools:context=".fragments.AddGoalFragment">
 
 
+    // Developed by Chris
     <TextView
         android:id="@+id/tvStartingAmount"
         android:layout_width="fill_parent"
