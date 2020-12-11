@@ -1,3 +1,7 @@
+// written by: Stephanie Gamboa
+// tested by: Stephanie, Jashan, Chris, and Jorge
+// debugged by:  Stephanie Gamboa & Chris Gallo
+
 package edu.csustan.budgetbuddy.fragments;
 
 import android.os.Bundle;

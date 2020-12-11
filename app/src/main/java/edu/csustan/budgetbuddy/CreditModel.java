@@ -1,5 +1,9 @@
 package edu.csustan.budgetbuddy;
 
+// written by: Natasha Garcia
+// tested by: Stephanie, Jashan, Chris, and Jorge
+// debugged by:  Natasha
+
 public class CreditModel {
 
     private String header;

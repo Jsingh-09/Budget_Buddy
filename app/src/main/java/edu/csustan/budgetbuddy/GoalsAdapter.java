@@ -11,6 +11,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
+// written by: Natasha Garcia ( resuable code from Stephanie's ExpensesAdapter )
+// tested by: Stephanie, Jashan, Chris, and Jorge
+// debugged by:  Natasha
+
+
 public class GoalsAdapter extends RecyclerView.Adapter<GoalsAdapter.ViewHolder> {
 
     private Context context;

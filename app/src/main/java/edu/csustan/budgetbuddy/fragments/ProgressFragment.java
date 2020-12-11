@@ -32,7 +32,12 @@ import edu.csustan.budgetbuddy.R;
 import edu.csustan.budgetbuddy.Saving;
 import it.xabaras.android.recyclerview.swipedecorator.RecyclerViewSwipeDecorator;
 
-// work on this one - list of goals
+// written by: Natasha Garcia ( resuable code from Stephanie's ListItemsFragment )
+// tested by: Stephanie, Jashan, Chris, and Jorge
+// debugged by:  Stephanie
+
+
+
 public class ProgressFragment extends Fragment {
     public static final String TAG = "ProgressFragment";
     private RecyclerView rvGoals;

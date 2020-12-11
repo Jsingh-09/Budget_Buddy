@@ -1,3 +1,6 @@
+// written by: Stephanie Gamboa
+// tested by: Stephanie, Jashan, Chris, and Jorge
+// debugged by:  Stephanie Gamboa
 package edu.csustan.budgetbuddy;
 
 import android.content.Context;
@@ -16,7 +19,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
-//Stephanie's Code
+
 //Adapter for expense recyclerview
 public class ExpensesAdapter extends RecyclerView.Adapter<ExpensesAdapter.ViewHolder> {
 
@@ -51,6 +54,7 @@ public class ExpensesAdapter extends RecyclerView.Adapter<ExpensesAdapter.ViewHo
 
     }
 
+    //delete item from database
     public void deleteItem(int position) {
         Expense expense = expenses.get(position);
         expense.deleteInBackground();
@@ -101,6 +105,7 @@ public class ExpensesAdapter extends RecyclerView.Adapter<ExpensesAdapter.ViewHo
        tvDatePlaced.setText(expense.getDate());
        // tvUsername.setText(expense.getUser().getUsername());
 
+        //event listeners
         itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
