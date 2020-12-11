@@ -1,3 +1,6 @@
+// written by: Stephanie Gamboa
+// tested by: Stephanie, Jashan, Chris, and Jorge
+// debugged by:  Stephanie Gamboa
 package edu.csustan.budgetbuddy;
 
 import com.parse.ParseClassName;
@@ -8,7 +11,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-//Stephanie's code
+
 //This class represents the database class "Expenses" and its objects
 @ParseClassName("Expenses")
 public class Expense extends ParseObject {

@@ -32,7 +32,7 @@ import edu.csustan.budgetbuddy.R;
 import edu.csustan.budgetbuddy.Saving;
 import it.xabaras.android.recyclerview.swipedecorator.RecyclerViewSwipeDecorator;
 
-// written by: Natasha Garcia ( resuable code from Stephanie's AddFragment )
+// written by: Natasha Garcia ( resuable code from Stephanie's ListItemsFragment )
 // tested by: Stephanie, Jashan, Chris, and Jorge
 // debugged by:  Stephanie
 

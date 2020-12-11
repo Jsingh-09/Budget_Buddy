@@ -1,3 +1,6 @@
+// written by: Stephanie Gamboa
+// tested by: Stephanie, Jashan, Chris, and Jorge
+// debugged by:  Stephanie Gamboa
 package edu.csustan.budgetbuddy.fragments;
 
 import android.graphics.Canvas;
@@ -39,7 +42,8 @@ import edu.csustan.budgetbuddy.R;
 import it.xabaras.android.recyclerview.swipedecorator.RecyclerViewSwipeDecorator;
 
 
-//Stephanie's Code
+
+
 //this fragment covers the expense list
 public class ListItemsFragment extends Fragment {
 

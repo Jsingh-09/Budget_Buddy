@@ -1,3 +1,6 @@
+// written by: Stephanie Gamboa
+// tested by: Stephanie, Jashan, Chris, and Jorge
+// debugged by:  Stephanie Gamboa & Chris Gallo
 package edu.csustan.budgetbuddy.fragments;
 
 import android.app.DatePickerDialog;
@@ -34,7 +37,7 @@ import java.util.Calendar;
 import edu.csustan.budgetbuddy.Expense;
 import edu.csustan.budgetbuddy.R;
 
-//Stephanie's Code
+
 //this code covers the Add expenses fragment
 public class AddFragment extends Fragment implements AdapterView.OnItemSelectedListener {
 

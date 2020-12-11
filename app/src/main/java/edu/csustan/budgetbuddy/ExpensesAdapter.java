@@ -1,3 +1,6 @@
+// written by: Stephanie Gamboa
+// tested by: Stephanie, Jashan, Chris, and Jorge
+// debugged by:  Stephanie Gamboa
 package edu.csustan.budgetbuddy;
 
 import android.content.Context;
@@ -16,7 +19,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
-//Stephanie's Code
+
 //Adapter for expense recyclerview
 public class ExpensesAdapter extends RecyclerView.Adapter<ExpensesAdapter.ViewHolder> {
 
