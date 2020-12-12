@@ -1,4 +1,6 @@
-//Author: Jorge Hernandez Ortega
+//Written by: Jorge Hernandez Ortega
+//tested by: Jashan S., Stephanie G., Natasha G.
+//debugged by: Jorge H.
 //The following code was partially adapted using the Back4App documentation: https://www.back4app.com/docs/get-started/welcome
 
 package edu.csustan.budgetbuddy.fragments;
