@@ -1,4 +1,7 @@
-// Jashandeep Singh
+// written by: Jashandeep Singh
+// tested by: Stephanie, Jashan, Chris, Jorge and Natasha
+// debugged by: Jashandeep Singh
+
 package edu.csustan.budgetbuddy;
 
 import android.content.Intent;
@@ -6,6 +9,8 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -33,6 +38,12 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        if (android.os.Build.VERSION.SDK_INT >= 21) {
+            Window window = this.getWindow();
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+            window.setStatusBarColor(this.getResources().getColor(R.color.colorPrimary));
+        }
 
         // Initializing the EditText and button
         edEmail = findViewById(R.id.edEmail);
@@ -83,7 +94,7 @@ public class LoginActivity extends AppCompatActivity {
                 }
                 // navigate to the main activity if the user has signed in properly
                 goMainActivity();
-                Toast.makeText(LoginActivity.this, "Logged In", Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginActivity.this, "Welcome to Budget Buddy", Toast.LENGTH_SHORT).show();
                 Log.i(TAG, "User has been authenticated and signed in.");
             }
         });

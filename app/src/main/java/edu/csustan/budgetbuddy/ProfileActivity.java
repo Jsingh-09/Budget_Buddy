@@ -1,84 +1,75 @@
-// Jashandeep Singh
+// written by: Jashandeep Singh
+// tested by: Stephanie, Jashan, Chris, Jorge and Natasha
+// debugged by: Jashandeep Singh
 package edu.csustan.budgetbuddy;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.MotionEvent;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Spinner;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.parse.ParseUser;
-
-import edu.csustan.budgetbuddy.fragments.AddFragment;
 
 public class ProfileActivity extends AppCompatActivity {
 
     private TextView tvName;
     private TextView tvEmail;
 
-    // Using spinner for the navigation menu
-    Spinner spinner;
+    ImageButton budget_calculator_button;
+    ImageButton building_credit_button;
+    ImageButton saving_goal_button;
+    ImageButton tracking_expense_button;
 
+    // This function will have the image so that the user can click on it to navigate through the application
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+        if (android.os.Build.VERSION.SDK_INT >= 21) {
+            Window window = this.getWindow();
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+            window.setStatusBarColor(this.getResources().getColor(R.color.colorPrimary));
+        }
         ParseUser currentUser = ParseUser.getCurrentUser();
 
-        // Initializing the spinner
-        spinner = findViewById(R.id.spinner);
-
-        // Array to show the list of the menu which is displayed at the top of the app on the profile page
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(ProfileActivity.this,R.layout.custom_spinner, getResources().getStringArray(R.array.Items));
-
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
-
-        // Spinner is connected to the different activities that are connected to the different pages
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        // Activity connection with the image
+        budget_calculator_button = (ImageButton) findViewById(R.id.budget_calculator);
+        budget_calculator_button.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-                if(parent.getItemAtPosition(position).equals("Items")){
-
-                }
-                else {
-                    // Using the if/else statement to navigate between the different pages
-                    String item = parent.getItemAtPosition(position).toString();
-                    Toast.makeText(parent.getContext(), "Selected: " + item, Toast.LENGTH_LONG).show();
-
-                    if (parent.getItemAtPosition(position).equals("Budget Calculator")) {
-                        Intent intent = new Intent(ProfileActivity.this, Budget_Calculator.class);
-                        startActivity(intent);
-                    } else if (parent.getItemAtPosition(position).equals("Home")) {
-                        Intent intent = new Intent(ProfileActivity.this, ProfileActivity.class);
-                    }
-                    else if (parent.getItemAtPosition(position).equals("Track my Expenses")) {
-                        Intent intent = new Intent(ProfileActivity.this, Track_Expenses.class);
-                        startActivity(intent);
-
-                    }
-                    else if (parent.getItemAtPosition(position).equals("Building Credit")) {
-                        Intent intent = new Intent(ProfileActivity.this, BuildingCreditActivity.class);
-                        startActivity(intent);
-
-                    }
-                }
-
+            public void onClick(View v) {
+                Intent intentLoadNewActivity = new Intent(ProfileActivity.this, Budget_Calculator.class);
+                startActivity(intentLoadNewActivity);
             }
-
+        });
+        building_credit_button = (ImageButton) findViewById(R.id.building_credit);
+        building_credit_button.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
+            public void onClick(View v) {
+                Intent intentLoadNewActivity = new Intent(ProfileActivity.this, BuildingCredit.class);
+                startActivity(intentLoadNewActivity);
+            }
+        });
+        saving_goal_button = (ImageButton) findViewById(R.id.saving_button);
+        saving_goal_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentLoadNewActivity = new Intent(ProfileActivity.this, SavingGoalActivity.class);
+                startActivity(intentLoadNewActivity);
+            }
+        });
+        tracking_expense_button = (ImageButton) findViewById(R.id.tracking_button);
+        tracking_expense_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentLoadNewActivity = new Intent(ProfileActivity.this, Track_Expenses.class);
+                startActivity(intentLoadNewActivity);
             }
         });
 
