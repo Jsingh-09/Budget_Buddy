@@ -101,7 +101,7 @@ Demo as of 12/11/2020
 
 ## Unit Tests 
 
-- Budget Calculator
+## Budget Calculator
 - Input Data “100” “50.1.0” “50”
 - Expected Outcome: Fail, too many decimals
 - Actual Outcome: Fail, too many decimals
@@ -118,7 +118,7 @@ Demo as of 12/11/2020
 - Comparison: Same Result
 
 
-- Track My Expenses - Add Expense 
+## Track My Expenses - Add Expense 
 - Input Data: “Walmart” “Groceries” “12….” “12/09/2020”
 - Expected Outcome: Fail, too many decimals 
 - Actual Outcome:Fail, too many decimals
@@ -134,26 +134,26 @@ Demo as of 12/11/2020
 - Actual Outcome: Accept. Expense add ( “Walmart” “Groceries” “15.56” “12/09/2002”)
 - Comparison: Same Result
 
-- Sign In
+## Sign In
 - Input Data: “jashanbhinder2@gmail.com” “12345”
 - Expected Outcome: Pass, email address and the password matches
 - Actual Outcome: Pass, email address and the password matches
 - Comparison: Same Result
 
-- Reset Password
+## Reset Password
 - Input Data: “jashan@gmail.com”
 - Expected Outcome: fail, invalid email address
 - Actual Outcome: fail, invalid email address
 - Comparison: Same Result
 
-- Sign up
+## Sign up
 - Input Data: “Corey” “Corey123@gmail.com” “12345” “1234”
 - Expected Outcome: fail, Password are not the same
 - Actual Outcome: fail, Password are not the same
 - Comparison: Same Result
 
 
-- Saving Goal - Add Goal 
+## Saving Goal - Add Goal 
 - Input Data: “Vacation”, “Trip to New York”, “$3,000”, “0...21”
 - Expected Outcome: Fail, “Too many decimals” 
 - Actual Outcome: Fail, “Too many decimals” 
