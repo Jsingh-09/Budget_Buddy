@@ -18,6 +18,7 @@ To run the application, clone the repo and open the whole folder using Android S
 ## Early Demo
 <img src='https://recordit.co/QWbC9yJ7Bi.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough1'>
 Demo as of 11/16/2020
+
 ## Latest Demo
 <img src='https://imgur.com/G44b5wa.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough1'>
 Demo as of 12/11/2020
