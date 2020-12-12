@@ -15,7 +15,7 @@ Budget Buddy will help students budget their finances to cover all of their expe
 
 To run the application, clone the repo and open the whole folder using Android Studio. Note, API keys will not be accessible once the project is deployed.
 
-## Early Demo
+## Latest Demo
 <img src='https://imgur.com/G44b5wa.gif' title='Video Walkthrough' width='250' alt='Video Walkthrough1'>
 Demo as of 12/11/2020
 
