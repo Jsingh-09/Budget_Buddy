@@ -1,4 +1,6 @@
 //Author: Jorge Hernandez Ortega
+//Tested by: Jashan S., Chris G., Stephanie G.
+//debugged by: Jorge H.
 //The following code was partially adapted using the AnyChart documentation: https://github.com/AnyChart/AnyChart-Android
 //The following code was partially adapted using the Back4App documentation: https://www.back4app.com/docs/get-started/welcome
 
