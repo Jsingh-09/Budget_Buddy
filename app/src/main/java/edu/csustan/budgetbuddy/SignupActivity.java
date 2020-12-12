@@ -1,5 +1,5 @@
 // written by: Jashandeep Singh
-// tested by: Stephanie, Jashan, Chris, Jorge and natasha
+// tested by: Stephanie, Jashan, Chris, Jorge and Natasha
 // debugged by: Jashandeep Singh
 package edu.csustan.budgetbuddy;
 
