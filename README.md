@@ -29,7 +29,7 @@ Demo as of 12/11/2020
 ## Authors
 - [Jashandeep Singh](https://www.linkedin.com/in/-jashandeep-singh/), [Chris Gallo](https://www.linkedin.com/in/chrisgallo17/), [Natasha Garcia](https://www.linkedin.com/in/natasha-g-0451441b3/), [Stephanie Gamboa](https://www.linkedin.com/in/stephanie-gamboa-/), [Jorge Hernandez](https://www.linkedin.com/in/jorge-hernandez-ortega-77486418b/)
 
-##Classes & Files Explained:
+## Classes & Files Explained:
 
 - AppParse: This class connects the app with the correct database using the Keys.
 
