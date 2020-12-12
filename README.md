@@ -102,63 +102,69 @@ Demo as of 12/11/2020
 ## Unit Tests 
 
 - Budget Calculator
-a. Input Data “100” “50.1.0” “50”
-b. Expected Outcome: Fail, too many decimals
-c. Actual Outcome: Fail, too many decimals
-d. Comparison: Same Result
-e. Input Data “100” “.” “20”
-f. Expected Outcome: Fail, invalid input
-g. Actual Outcome: Fail, invalid input
-h. Comparison: Same Result
-i. Input Data “500” “100” “200”
-j. Expected Outcome: 600
-k. Actual Outcome: 600
-l. Comparison: Same Result
+- Input Data “100” “50.1.0” “50”
+- Expected Outcome: Fail, too many decimals
+- Actual Outcome: Fail, too many decimals
+- Comparison: Same Result
+
+- Input Data “100” “.” “20”
+- Expected Outcome: Fail, invalid input
+- Actual Outcome: Fail, invalid input
+- Comparison: Same Result
+
+- Input Data “500” “100” “200”
+- Expected Outcome: 600
+- Actual Outcome: 600
+- Comparison: Same Result
 
 
 - Track My Expenses - Add Expense 
-a. Input Data: “Walmart” “Groceries” “12….” “12/09/2020”
-b. Expected Outcome: Fail, too many decimals 
-c. Actual Outcome:Fail, too many decimals
-d. Comparison: Same Result
-e. Input Data: “” “Fast Food” “15.50” “12/11/2020”
-f. Expected Outcome: Fail, Fields cannot be empty
-g. Actual OutcomeFail, Fields cannot be empty
-h. Comparison: Same Result
-i. Input Data: “Walmart” “Groceries” “15.555555555” “12/09/2002”
-j. Expected Outcome: Accept. Expense add ( “Walmart” “Groceries” “15.56” “12/09/2002”)
-k. Actual Outcome: Accept. Expense add ( “Walmart” “Groceries” “15.56” “12/09/2002”)
-l. Comparison: Same Result
+- Input Data: “Walmart” “Groceries” “12….” “12/09/2020”
+- Expected Outcome: Fail, too many decimals 
+- Actual Outcome:Fail, too many decimals
+- Comparison: Same Result
+
+- Input Data: “” “Fast Food” “15.50” “12/11/2020”
+- Expected Outcome: Fail, Fields cannot be empty
+- Actual OutcomeFail, Fields cannot be empty
+- Comparison: Same Result
+
+- Input Data: “Walmart” “Groceries” “15.555555555” “12/09/2002”
+- Expected Outcome: Accept. Expense add ( “Walmart” “Groceries” “15.56” “12/09/2002”)
+- Actual Outcome: Accept. Expense add ( “Walmart” “Groceries” “15.56” “12/09/2002”)
+- Comparison: Same Result
 
 - Sign In
-a. Input Data: “jashanbhinder2@gmail.com” “12345”
-b. Expected Outcome: Pass, email address and the password matches
-c. Actual Outcome: Pass, email address and the password matches
-d. Comparison: Same Result
+- Input Data: “jashanbhinder2@gmail.com” “12345”
+- Expected Outcome: Pass, email address and the password matches
+- Actual Outcome: Pass, email address and the password matches
+- Comparison: Same Result
 
 - Reset Password
-a. Input Data: “jashan@gmail.com”
-b. Expected Outcome: fail, invalid email address
-c. Actual Outcome: fail, invalid email address
-d. Comparison: Same Result
+- Input Data: “jashan@gmail.com”
+- Expected Outcome: fail, invalid email address
+- Actual Outcome: fail, invalid email address
+- Comparison: Same Result
 
 - Sign up
-a. Input Data: “Corey” “Corey123@gmail.com” “12345” “1234”
-b. Expected Outcome: fail, Password are not the same
-c. Actual Outcome: fail, Password are not the same
-d. Comparison: Same Result
+- Input Data: “Corey” “Corey123@gmail.com” “12345” “1234”
+- Expected Outcome: fail, Password are not the same
+- Actual Outcome: fail, Password are not the same
+- Comparison: Same Result
 
 
 - Saving Goal - Add Goal 
-a. Input Data: “Vacation”, “Trip to New York”, “$3,000”, “0...21”
-b. Expected Outcome: Fail, “Too many decimals” 
-c. Actual Outcome: Fail, “Too many decimals” 
-d. Comparison: Same Results 
-e. Input Data: “_______” , “Trip to New York”, “3,000”, “0.21”
-f. Expected Outcome: Fail, “Fields cannot be Empty”
-g. Actual Outcome: Fail, “Fields cannot be Empty”
-h. Comparison: Same Results 
-i. Input Data: “Vacation”, “Trip to New York”, “$3,000”, “0.21”
-j. Expected Outcome: Success, “Added to Goals”
-k. Actual Outcome:  Success, “Added to Goals”
-l. Comparison: Same Results 
+- Input Data: “Vacation”, “Trip to New York”, “$3,000”, “0...21”
+- Expected Outcome: Fail, “Too many decimals” 
+- Actual Outcome: Fail, “Too many decimals” 
+- Comparison: Same Results 
+
+- Input Data: “_______” , “Trip to New York”, “3,000”, “0.21”
+- Expected Outcome: Fail, “Fields cannot be Empty”
+- Actual Outcome: Fail, “Fields cannot be Empty”
+- Comparison: Same Results 
+
+- Input Data: “Vacation”, “Trip to New York”, “$3,000”, “0.21”
+- Expected Outcome: Success, “Added to Goals”
+- Actual Outcome:  Success, “Added to Goals”
+- Comparison: Same Results 
