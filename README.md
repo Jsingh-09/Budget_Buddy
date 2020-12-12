@@ -105,12 +105,10 @@ a. Input Data “100” “50.1.0” “50”
 b. Expected Outcome: Fail, too many decimals
 c. Actual Outcome: Fail, too many decimals
 d. Comparison: Same Result
-
 e. Input Data “100” “.” “20”
 f. Expected Outcome: Fail, invalid input
 g. Actual Outcome: Fail, invalid input
 h. Comparison: Same Result
-
 i. Input Data “500” “100” “200”
 j. Expected Outcome: 600
 k. Actual Outcome: 600
@@ -122,12 +120,10 @@ a. Input Data: “Walmart” “Groceries” “12….” “12/09/2020”
 b. Expected Outcome: Fail, too many decimals 
 c. Actual Outcome:Fail, too many decimals
 d. Comparison: Same Result
-
 e. Input Data: “” “Fast Food” “15.50” “12/11/2020”
 f. Expected Outcome: Fail, Fields cannot be empty
 g. Actual OutcomeFail, Fields cannot be empty
 h. Comparison: Same Result
-
 i. Input Data: “Walmart” “Groceries” “15.555555555” “12/09/2002”
 j. Expected Outcome: Accept. Expense add ( “Walmart” “Groceries” “15.56” “12/09/2002”)
 k. Actual Outcome: Accept. Expense add ( “Walmart” “Groceries” “15.56” “12/09/2002”)
@@ -138,7 +134,6 @@ a. Input Data: “jashanbhinder2@gmail.com” “12345”
 b. Expected Outcome: Pass, email address and the password matches
 c. Actual Outcome: Pass, email address and the password matches
 d. Comparison: Same Result
-
 
 - Reset Password
 a. Input Data: “jashan@gmail.com”
@@ -158,12 +153,10 @@ a. Input Data: “Vacation”, “Trip to New York”, “$3,000”, “0...21�
 b. Expected Outcome: Fail, “Too many decimals” 
 c. Actual Outcome: Fail, “Too many decimals” 
 d. Comparison: Same Results 
-
 e. Input Data: “_______” , “Trip to New York”, “3,000”, “0.21”
 f. Expected Outcome: Fail, “Fields cannot be Empty”
 g. Actual Outcome: Fail, “Fields cannot be Empty”
 h. Comparison: Same Results 
-
 i. Input Data: “Vacation”, “Trip to New York”, “$3,000”, “0.21”
 j. Expected Outcome: Success, “Added to Goals”
 k. Actual Outcome:  Success, “Added to Goals”
