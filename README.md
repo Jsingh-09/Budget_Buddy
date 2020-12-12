@@ -106,12 +106,12 @@ Demo as of 12/11/2020
 - Expected Outcome: Fail, too many decimals
 - Actual Outcome: Fail, too many decimals
 - Comparison: Same Result
-
+---
 - Input Data “100” “.” “20”
 - Expected Outcome: Fail, invalid input
 - Actual Outcome: Fail, invalid input
 - Comparison: Same Result
-
+---
 - Input Data “500” “100” “200”
 - Expected Outcome: 600
 - Actual Outcome: 600
@@ -123,12 +123,12 @@ Demo as of 12/11/2020
 - Expected Outcome: Fail, too many decimals 
 - Actual Outcome:Fail, too many decimals
 - Comparison: Same Result
-
+---
 - Input Data: “” “Fast Food” “15.50” “12/11/2020”
 - Expected Outcome: Fail, Fields cannot be empty
 - Actual OutcomeFail, Fields cannot be empty
 - Comparison: Same Result
-
+---
 - Input Data: “Walmart” “Groceries” “15.555555555” “12/09/2002”
 - Expected Outcome: Accept. Expense add ( “Walmart” “Groceries” “15.56” “12/09/2002”)
 - Actual Outcome: Accept. Expense add ( “Walmart” “Groceries” “15.56” “12/09/2002”)
@@ -158,12 +158,12 @@ Demo as of 12/11/2020
 - Expected Outcome: Fail, “Too many decimals” 
 - Actual Outcome: Fail, “Too many decimals” 
 - Comparison: Same Results 
-
+---
 - Input Data: “_______” , “Trip to New York”, “3,000”, “0.21”
 - Expected Outcome: Fail, “Fields cannot be Empty”
 - Actual Outcome: Fail, “Fields cannot be Empty”
 - Comparison: Same Results 
-
+---
 - Input Data: “Vacation”, “Trip to New York”, “$3,000”, “0.21”
 - Expected Outcome: Success, “Added to Goals”
 - Actual Outcome:  Success, “Added to Goals”
