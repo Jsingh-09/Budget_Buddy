@@ -1,4 +1,6 @@
 //Author: Jorge Hernandez Ortega
+//Tested by: Jashan S., Chris G., Stephanie G.
+//debugged by: Jorge H.
 //The following code was partially adapted using the AnyChart documentation: https://github.com/AnyChart/AnyChart-Android
 //The following code was partially adapted using the Back4App documentation: https://www.back4app.com/docs/get-started/welcome
 
@@ -54,7 +56,7 @@ public class GraphFragment extends Fragment {
         query.include(Expense.KEY_AMOUNT);                                                                  //query parameter that includes Expense amount
         final List<DataEntry> data = new ArrayList<>();                                                     //initiates a DataEntry List that will be used to populate chart
 
-        final ArrayList<Double> groceries = new ArrayList<>();
+        final ArrayList<Double> groceries = new ArrayList<>();                                              //The following ArrayLists store every expense in their respective category
         final ArrayList<Double> fastFood = new ArrayList<>();
         final ArrayList<Double> clothing = new ArrayList<>();
         final ArrayList<Double> entertainment = new ArrayList<>();
@@ -69,7 +71,7 @@ public class GraphFragment extends Fragment {
                 for(Expense objects : dataList){                                                            //advanced for loop that iterates through the entries in the database
                     Log.i(TAG, "Type: " + objects.getItemType() + " Amount: " + objects.getCost());   //Log used for debugging
 
-                    if(objects.getItemType().equals("Groceries")) {
+                    if(objects.getItemType().equals("Groceries")) {                                         //the following if and if else statements add each expense to the corresponding ArrayList for their category
                         groceries.add(objects.getCost());
                     }else if(objects.getItemType().equals("Fast Food")) {
                         fastFood.add(objects.getCost());
@@ -81,16 +83,15 @@ public class GraphFragment extends Fragment {
                         miscellaneous.add(objects.getCost());
                     }
 
-                    Log.i(TAG, "groceries: " + groceries.toString());
+                    Log.i(TAG, "groceries: " + groceries.toString());                                   //Logs used for debugging(check if expenses were added to each ArrayList)
                     Log.i(TAG, "fast food: " + fastFood.toString());
                     Log.i(TAG, "clothing: " + clothing.toString());
                     Log.i(TAG, "entertainment: " + entertainment.toString());
                     Log.i(TAG, "miscellaneous: " + miscellaneous.toString());
 
-                    //data.add(new ValueDataEntry(objects.getItemType(), objects.getCost()));                 //adds Expense type and amount as a new DataEntry into the List data
                 }
                 
-                data.add(new ValueDataEntry("Total Groceries", addCosts(groceries)));
+                data.add(new ValueDataEntry("Total Groceries", addCosts(groceries)));                    //creates a new data entry for each expense category(implements addCosts() method)
                 data.add(new ValueDataEntry("Total Fast Food", addCosts(fastFood)));
                 data.add(new ValueDataEntry("Total Clothing", addCosts(clothing)));
                 data.add(new ValueDataEntry("Total Entertainment", addCosts(entertainment)));
@@ -106,15 +107,15 @@ public class GraphFragment extends Fragment {
                 anyChartView.setChart(pie);                                                                 //binds the pie chart into the view anyChartView
             }
         });
-        return chartView;
+        return chartView;                                                                                   //returns the view
     }
 
-    public double addCosts(ArrayList<Double> costs){
-        double totalCost = 0;
-        for(int i = 0; i < costs.size(); i++){
-            totalCost = totalCost+costs.get(i);
-            Log.i(TAG, "total: " + totalCost);
+    public double addCosts(ArrayList<Double> costs){                                                        //Method that adds all expenses inside of an ArrayList(returns a double)
+        double totalCost = 0;                                                                               //variable where the total of each ArrayList is stored
+        for(int i = 0; i < costs.size(); i++){                                                              //for loop iterates through the ArrayLists
+            totalCost = totalCost+costs.get(i);                                                             //adds each element to totalCosts
+            Log.i(TAG, "total: " + totalCost);                                                        //Log used for debugging
         }
-        return totalCost;
+        return totalCost;                                                                                   //totalCosts is returned
     }
 }

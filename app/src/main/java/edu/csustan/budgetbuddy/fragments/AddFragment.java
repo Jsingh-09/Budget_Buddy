@@ -1,3 +1,6 @@
+// written by: Stephanie Gamboa
+// tested by: Stephanie, Jashan, Chris, and Jorge
+// debugged by:  Stephanie Gamboa & Chris Gallo
 package edu.csustan.budgetbuddy.fragments;
 
 import android.app.DatePickerDialog;
@@ -34,7 +37,7 @@ import java.util.Calendar;
 import edu.csustan.budgetbuddy.Expense;
 import edu.csustan.budgetbuddy.R;
 
-//Stephanie's Code
+
 //this code covers the Add expenses fragment
 public class AddFragment extends Fragment implements AdapterView.OnItemSelectedListener {
 
@@ -76,7 +79,7 @@ public class AddFragment extends Fragment implements AdapterView.OnItemSelectedL
 
         sTypes.setOnItemSelectedListener(this);
 
-        //this belongs to the date
+        //this belongs to the date and creates date box
         mDisplayDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -91,6 +94,7 @@ public class AddFragment extends Fragment implements AdapterView.OnItemSelectedL
                 dialog.show();
             }
         });
+        //date event listener
         mDateSetListener = new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker datePicker, int year, int month, int day) {

@@ -1,4 +1,6 @@
-// Jashandeep Singh
+// written by: Jashandeep Singh
+// tested by: Stephanie, Jashan, Chris, Jorge and natasha
+// debugged by: Jashandeep Singh
 package edu.csustan.budgetbuddy;
 
 import android.app.ProgressDialog;

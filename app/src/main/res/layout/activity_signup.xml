@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- (Jashaneep Singh) -->
+<!-- Written by: Jashandeep Singh -->
+<!-- Debugged by: Jashandeep Singh -->
+<!-- Tested by: Jashandeep Singh -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"

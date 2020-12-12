@@ -1,4 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Written by: Stephanie Gamboa -->
+<!-- Debugged by: Stephanie Gamboa -->
+<!-- Tested by: Stephanie Gamboa -->
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -6,7 +10,6 @@
     android:orientation="vertical"
     tools:context=".fragments.AddFragment">
 
-    <!-- Stephanie's Code -->
     <!-- UI for add expense -->
 
 
