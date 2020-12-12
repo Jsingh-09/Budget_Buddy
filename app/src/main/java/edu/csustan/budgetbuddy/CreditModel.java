@@ -4,6 +4,8 @@ package edu.csustan.budgetbuddy;
 // tested by: Stephanie, Jashan, Chris, and Jorge
 // debugged by:  Natasha
 
+//defines all objects of the information parsed, defines setters and headers
+
 public class CreditModel {
 
     private String header;

@@ -18,6 +18,8 @@ import java.util.ArrayList;
 // tested by: Stephanie, Jashan, Chris, and Jorge
 // debugged by:  Natasha
 
+// This creates an adapter to bind the information for building credit to display on the recycler view
+
 public class CreditAdapter extends RecyclerView.Adapter<CreditViewHolder> implements Filterable {
 
     ArrayList<CreditModel> data;
@@ -38,6 +40,7 @@ public class CreditAdapter extends RecyclerView.Adapter<CreditViewHolder> implem
         return new CreditViewHolder(view);
     }
 
+    // binds the information
     @Override
     public void onBindViewHolder(@NonNull CreditViewHolder holder, int position) {
 
@@ -98,6 +101,7 @@ public class CreditAdapter extends RecyclerView.Adapter<CreditViewHolder> implem
 
         }
 
+        //shows the results and passes it into the recycler view
         @Override //UI
         protected void publishResults(CharSequence constraint, FilterResults results) {
 

@@ -15,7 +15,7 @@ import java.util.List;
 // tested by: Stephanie, Jashan, Chris, and Jorge
 // debugged by:  Natasha
 
-
+// Creates an adapter to binding the goals information to recyclerview
 public class GoalsAdapter extends RecyclerView.Adapter<GoalsAdapter.ViewHolder> {
 
     private Context context;
@@ -38,6 +38,7 @@ public class GoalsAdapter extends RecyclerView.Adapter<GoalsAdapter.ViewHolder> 
         this.savings = savings;
     }
 
+    //displays the item on the recycler view
     @NonNull
     @Override
     public GoalsAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -52,6 +53,7 @@ public class GoalsAdapter extends RecyclerView.Adapter<GoalsAdapter.ViewHolder> 
 
     }
 
+    //deletes the item on swipe
     public void deleteItem(int position) {
         Saving saving = savings.get(position);
         saving.deleteInBackground();
@@ -65,6 +67,7 @@ public class GoalsAdapter extends RecyclerView.Adapter<GoalsAdapter.ViewHolder> 
     }
 
 
+    //defines the UI items from XML
 
     class ViewHolder extends RecyclerView.ViewHolder {
         private TextView tvGoalName;

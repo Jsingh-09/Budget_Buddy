@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 // tested by: Stephanie, Jashan, Chris, and Jorge
 // debugged by:  Natasha
 
-
+// defines the UI elements
 public class CreditViewHolder extends RecyclerView.ViewHolder {
 
     ImageView img;

@@ -17,6 +17,7 @@ import java.util.ArrayList;
 // tested by: Stephanie, Jashan, Chris, and Jorge
 // debugged by:  Natasha
 
+//second page of the building credit, when image is clicked
 public class BuildingCredit2 extends AppCompatActivity {
 
     ImageView img;

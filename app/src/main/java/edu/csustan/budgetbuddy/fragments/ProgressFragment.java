@@ -37,6 +37,7 @@ import it.xabaras.android.recyclerview.swipedecorator.RecyclerViewSwipeDecorator
 // debugged by:  Stephanie
 
 
+// main fragment for progress
 
 public class ProgressFragment extends Fragment {
     public static final String TAG = "ProgressFragment";
@@ -58,6 +59,8 @@ public class ProgressFragment extends Fragment {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_progress, container, false);
     }
+
+    // gets information from database 
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {

@@ -18,6 +18,10 @@ import java.util.ArrayList;
 // tested by: Stephanie, Jashan, Chris, and Jorge
 // debugged by:  Natasha
 
+
+// main building credit class
+//defines items
+//creates adapter
 public class BuildingCredit extends AppCompatActivity {
 
     RecyclerView rcv;
@@ -38,6 +42,7 @@ public class BuildingCredit extends AppCompatActivity {
         rcv.setLayoutManager(gridLayoutManager);
     }
 
+    //array of information for the data being parsed
     public ArrayList<CreditModel> dataqueue() {
 
         ArrayList<CreditModel> holder = new ArrayList<>();
